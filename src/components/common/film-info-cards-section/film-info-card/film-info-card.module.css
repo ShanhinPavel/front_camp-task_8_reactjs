@@ -1,0 +1,47 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  height: 590px;
+  padding: 20px 0;
+}
+
+.filmImg {
+  max-width: 100%;
+  object-fit: cover;
+  height: 90%;
+}
+
+.filmInfoContainer {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+.titleAndRealizeDataContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filmTitle,
+.realizeData {
+  margin: 0;
+}
+
+.filmTitle {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.realizeData {
+  padding: 5px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.filmGenre {
+  margin: 0;
+  font-size: 14px;
+}

@@ -1,0 +1,36 @@
+@import '~normalize.css/normalize.css';
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/open-sans-v17-latin-regular.woff2') format('woff2'),
+    url('./assets/fonts/open-sans-v17-latin-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./assets/fonts/open-sans-v17-latin-800.woff2') format('woff2'),
+    url('./assets/fonts/open-sans-v17-latin-800.woff') format('woff');
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #2e2e2e;
+}
+
+input,
+button {
+  outline: 0 !important;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

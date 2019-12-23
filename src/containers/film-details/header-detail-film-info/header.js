@@ -1,0 +1,45 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { Logo, Poster, Title } from '../../../components';
+import styles from './header-detail-film-info.module.css';
+import { getReleaseYear } from '../../../utils';
+import { Routes } from '../../../services';
+import { clearTextInputValue } from '../../../actions/text-input-action';
+
+export const DetailFilmInfoHeader = () => {
+  const dispatch = useDispatch();
+  const { poster_path, title, vote_average, runtime = 200, release_date, overview } = useSelector(
+    (state) => state.filmDetails,
+  );
+
+  const releaseYear = getReleaseYear(release_date);
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.logoAndSearchButtonContainer}>
+        <Logo />
+        <Link to={{ pathname: Routes.home }} onClick={() => dispatch(clearTextInputValue())}>
+          <FontAwesomeIcon icon={faSearch} size="3x" color="#f65261" />
+        </Link>
+      </div>
+      <div className={styles.filmInfoContainer}>
+        <Poster poster_path={poster_path} title={title} />
+        <div className={styles.generalInfo}>
+          <div className={styles.titleAndRaiting}>
+            <Title content={title} />
+            <p className={styles.raiting}>{vote_average}</p>
+          </div>
+          <div className={styles.durationAndReleaseYear}>
+            <p className={styles.releaseYear}>{releaseYear}</p>
+            <p className={styles.duration}>{!runtime && '200'} min</p>
+          </div>
+          <p className={styles.description}>{overview}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
