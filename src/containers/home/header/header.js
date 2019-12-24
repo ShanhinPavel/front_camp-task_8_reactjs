@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Logo, Title, TabButtonSection, TabButtonSectionTitles } from '../../../components';
 import { SearchForm } from './search-form';
 import styles from './header.module.css';
+import { setSearchType } from '../../../actions';
 
 const FIND_YOUR_MOVIE = 'FIND YOUR MOVIE';
 
@@ -19,6 +20,7 @@ export const Header = () => {
         <TabButtonSection
           sectionTitle={TabButtonSectionTitles.SEARCH_BY}
           tabButtonsTitles={[TabButtonSectionTitles.TITLE, TabButtonSectionTitles.GENRES]}
+          tabAction={setSearchType}
         />
       </div>
     </div>

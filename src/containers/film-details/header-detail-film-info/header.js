@@ -12,10 +12,12 @@ import { clearTextInputValue } from '../../../actions/text-input-action';
 
 export const DetailFilmInfoHeader = () => {
   const dispatch = useDispatch();
-  const { poster_path, title, vote_average, runtime = 200, release_date, overview } = useSelector(
-    (state) => state.filmDetails,
-  );
+  const { filmDetails, error, isLoading } = useSelector((state) => state);
 
+  if (error) return <div>Error</div>;
+  if (isLoading) return <div>Spinner</div>;
+
+  const { poster_path, title, vote_average, runtime = 200, release_date, overview } = filmDetails;
   const releaseYear = getReleaseYear(release_date);
 
   return (

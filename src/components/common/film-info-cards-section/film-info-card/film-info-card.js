@@ -7,7 +7,7 @@ import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
 import { generatePathToFilmDetails } from '../../../../services/routes';
-import { fetchFilms, fetchFilmsDetailsAndFilmsByGenres } from '../../../../actions';
+import { fetchFilms, fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../../../actions';
 import { searchBy } from '../../../../services';
 
 export const FilmInfoCard = (props) => {
@@ -19,7 +19,7 @@ export const FilmInfoCard = (props) => {
 
   return (
     <div className={styles.cardContainer}>
-      <Link to={generatePathToFilmDetails(id)}>
+      <Link to={generatePathToFilmDetails(id)} onClick={() => dispatch(activeLoading(true))}>
         <Poster title={title} poster_path={poster_path} />
       </Link>
       <div className={styles.filmInfoContainer}>

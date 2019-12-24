@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import styles from './film-cards-summary.module.css';
-import { generateStingWithAmountFoundMovies } from './utils';
 import { useSelector } from 'react-redux';
 
-export const FilmsCardsSummary = () => {
-  const { filmsList } = useSelector((state) => state);
-  const filmsSummary = generateStingWithAmountFoundMovies(filmsList.length);
+import styles from './film-cards-summary.module.css';
+import { generateStingWithAmountFoundMovies, generateStringWithGenreFoundMovies } from './utils';
 
-  return <p className={styles.text}>{filmsSummary}</p>;
+export const FilmCardsSummaryTypes = {
+  SAME_GENRES: 'SAME_GENRES',
+  AMOUNT_FOUND_FILMS: 'AMOUNT_FOUND_FILMS',
 };
+
+export const FilmsCardsSummary = ({ filmsSummary }) => (
+  <p className={styles.text}>{filmsSummary}</p>
+);
 
 FilmsCardsSummary.propTypes = {
   filmsSummary: PropTypes.string,

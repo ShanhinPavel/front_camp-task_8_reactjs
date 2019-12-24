@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { TabButton } from './tab-button';
 import styles from './tab-buttons-section.module.css';
-import { setSearchType } from '../../../actions/';
 
 export const TabButtonSectionTitles = {
   GENRES: 'GENRES',
@@ -20,17 +19,17 @@ const TabButtonValues = {
   GENRES: 'genres',
   TITLE: 'title',
   REALISE_DATE: 'release_date',
-  RAITING: 'vote_count',
+  RAITING: 'vote_average',
 };
 
-export const TabButtonSection = ({ sectionTitle, tabButtonsTitles }) => {
+export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction }) => {
   const dispatch = useDispatch();
 
   const createTabButtons = (tabButtonsTitles) =>
     tabButtonsTitles.map((tabButtonTitle, index) => (
       <TabButton
         title={tabButtonTitle}
-        onClickButton={() => dispatch(setSearchType(TabButtonValues[tabButtonTitle]))}
+        onClickButton={() => dispatch(tabAction(TabButtonValues[tabButtonTitle]))}
         key={tabButtonTitle}
         rightRadius={!!index}
       />

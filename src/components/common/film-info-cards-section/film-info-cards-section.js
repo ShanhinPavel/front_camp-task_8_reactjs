@@ -12,8 +12,11 @@ const createFilmInfoCards = (filmsList) => {
 };
 
 export const FilmInfoCardsSection = () => {
-  const filmsList = useSelector((state) => state.filmsList);
+  const { filmsList, isLoading, error } = useSelector((state) => state);
   const filmsInfoCards = createFilmInfoCards(filmsList);
+
+  if (isLoading) return <div>Spinner</div>;
+  if (error) return <div>Error</div>;
 
   return (
     <>
