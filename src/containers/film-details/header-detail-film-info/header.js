@@ -7,8 +7,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Logo, Poster, Title } from '../../../components';
 import styles from './header-detail-film-info.module.css';
 import { getReleaseYear } from '../../../utils';
-import { Routes } from '../../../services';
+import { Routes, searchBy, sortBy } from '../../../services';
 import { clearTextInputValue } from '../../../actions/text-input-action';
+import { setSearchType, setSortType } from '../../../actions';
 
 export const DetailFilmInfoHeader = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,14 @@ export const DetailFilmInfoHeader = () => {
     <div className={styles.container}>
       <div className={styles.logoAndSearchButtonContainer}>
         <Logo />
-        <Link to={{ pathname: Routes.home }} onClick={() => dispatch(clearTextInputValue())}>
+        <Link
+          to={{ pathname: Routes.home }}
+          onClick={() => {
+            dispatch(clearTextInputValue());
+            dispatch(setSearchType(searchBy.TITLE));
+            dispatch(setSortType(sortBy.RATING));
+          }}
+        >
           <FontAwesomeIcon icon={faSearch} size="3x" color="#f65261" />
         </Link>
       </div>
@@ -37,7 +45,7 @@ export const DetailFilmInfoHeader = () => {
           </div>
           <div className={styles.durationAndReleaseYear}>
             <p className={styles.releaseYear}>{releaseYear}</p>
-            <p className={styles.duration}>{!runtime && '200'} min</p>
+            <p className={styles.duration}>{runtime} min</p>
           </div>
           <p className={styles.description}>{overview}</p>
         </div>
