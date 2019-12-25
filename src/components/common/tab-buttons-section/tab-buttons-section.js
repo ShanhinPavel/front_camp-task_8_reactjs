@@ -22,22 +22,32 @@ export const TabButtonValues = {
   RAITING: 'vote_average',
 };
 
-export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction }) => {
+export const TabSectionTypes = {
+  SORT_BY: 'sortBy',
+  SEARCH_BY: 'searchBy',
+};
+
+export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction, tabType }) => {
   const dispatch = useDispatch();
+  const activeValue = useSelector((state) => state[tabType]);
   const [firstButtonTitle, secondButtonTitle] = tabButtonsTitles;
+  const firstButtonValue = TabButtonValues[firstButtonTitle];
+  const secondButtonValue = TabButtonValues[secondButtonTitle];
 
   return (
     <div className={styles.container}>
       <p className={styles.sectionTitle}>{sectionTitle}</p>
       <TabButton
         title={firstButtonTitle}
-        onClickButton={() => dispatch(tabAction(TabButtonValues[firstButtonTitle]))}
+        onClickButton={() => dispatch(tabAction(firstButtonValue))}
         rightRadius={false}
+        isClicked={firstButtonValue === activeValue}
       />
       <TabButton
         title={secondButtonTitle}
-        onClickButton={() => dispatch(tabAction(TabButtonValues[secondButtonTitle]))}
+        onClickButton={() => dispatch(tabAction(secondButtonValue))}
         rightRadius={true}
+        isClicked={secondButtonValue === activeValue}
       />
     </div>
   );

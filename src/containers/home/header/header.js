@@ -5,6 +5,7 @@ import { Logo, Title, TabButtonSection, TabButtonSectionTitles } from '../../../
 import { SearchForm } from './search-form';
 import styles from './header.module.css';
 import { setSearchType } from '../../../actions';
+import { TabSectionTypes } from '../../../components/common/tab-buttons-section/tab-buttons-section';
 
 const FIND_YOUR_MOVIE = 'FIND YOUR MOVIE';
 
@@ -21,6 +22,7 @@ export const Header = () => {
           sectionTitle={TabButtonSectionTitles.SEARCH_BY}
           tabButtonsTitles={[TabButtonSectionTitles.TITLE, TabButtonSectionTitles.GENRES]}
           tabAction={setSearchType}
+          tabType={TabSectionTypes.SEARCH_BY}
         />
       </div>
     </div>
