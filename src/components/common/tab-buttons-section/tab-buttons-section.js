@@ -27,9 +27,12 @@ export const TabSectionTypes = {
   SEARCH_BY: 'searchBy',
 };
 
-export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction, tabType }) => {
-  const dispatch = useDispatch();
-  const activeValue = useSelector((state) => state[tabType]);
+export const TabButtonSection = ({
+  sectionTitle,
+  tabButtonsTitles,
+  activeTab,
+  onClickTabButton,
+}) => {
   const [firstButtonTitle, secondButtonTitle] = tabButtonsTitles;
   const firstButtonValue = TabButtonValues[firstButtonTitle];
   const secondButtonValue = TabButtonValues[secondButtonTitle];
@@ -39,15 +42,15 @@ export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction, ta
       <p className={styles.sectionTitle}>{sectionTitle}</p>
       <TabButton
         title={firstButtonTitle}
-        onClickButton={() => dispatch(tabAction(firstButtonValue))}
+        onClickButton={() => onClickTabButton(firstButtonValue)}
         rightRadius={false}
-        isClicked={firstButtonValue === activeValue}
+        isClicked={firstButtonValue === activeTab}
       />
       <TabButton
         title={secondButtonTitle}
-        onClickButton={() => dispatch(tabAction(secondButtonValue))}
+        onClickButton={() => onClickTabButton(secondButtonValue)}
         rightRadius={true}
-        isClicked={secondButtonValue === activeValue}
+        isClicked={secondButtonValue === activeTab}
       />
     </div>
   );

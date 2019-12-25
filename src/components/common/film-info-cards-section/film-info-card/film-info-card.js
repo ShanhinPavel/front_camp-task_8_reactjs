@@ -1,25 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
 
 import styles from './film-info-card.module.css';
 import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
 import { generatePathToFilmDetails } from '../../../../services/routes';
-import { fetchFilms, fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../../../actions';
-import { searchBy } from '../../../../services';
 
-export const FilmInfoCard = (props) => {
-  const dispatch = useDispatch();
-  const { filmInfo } = props;
+export const FilmInfoCard = ({ filmInfo, onClickCard }) => {
   const { poster_path, title, genres, release_date, id } = filmInfo;
+
   const relatedGenres = concatGenres(genres);
   const releaseYear = getReleaseYear(release_date);
 
   return (
     <div className={styles.cardContainer}>
-      <Link to={generatePathToFilmDetails(id)} onClick={() => dispatch(activeLoading(true))}>
+      <Link to={generatePathToFilmDetails(id)} onClick={onClickCard}>
         <Poster title={title} poster_path={poster_path} />
       </Link>
       <div className={styles.filmInfoContainer}>

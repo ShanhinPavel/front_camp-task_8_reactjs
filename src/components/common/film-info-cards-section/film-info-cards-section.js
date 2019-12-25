@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './film-info-cards-section.module.css';
 import { FilmInfoCard } from './film-info-card';
+import { activeLoading } from '../../../actions';
 
-const createFilmInfoCards = (filmsList) => {
+const createFilmInfoCards = (filmsList, clickCard) => {
   if (!filmsList.length) return null;
 
-  return filmsList.map((filmInfo) => <FilmInfoCard key={filmInfo.id} filmInfo={filmInfo} />);
+  return filmsList.map((filmInfo) => (
+    <FilmInfoCard key={filmInfo.id} filmInfo={filmInfo} onClickCard={clickCard} />
+  ));
 };
 
 export const FilmInfoCardsSection = () => {
   const { filmsList, isLoading, error } = useSelector((state) => state);
-  const filmsInfoCards = createFilmInfoCards(filmsList);
+  const dispatch = useDispatch();
+  const clickCard = () => dispatch(activeLoading(true));
+
+  const filmsInfoCards = createFilmInfoCards(filmsList, clickCard);
 
   if (isLoading) return <div>Spinner</div>;
   if (error) return <div>Error</div>;

@@ -30,6 +30,11 @@ export const HomeContainer = () => {
     );
   }, []);
 
+  const sortingSectionActiveTab = useSelector((state) => state[TabSectionTypes.SORT_BY]);
+  const clickTabSorting = (buttonValue) => {
+    dispatch(setSortType(buttonValue));
+  };
+
   return (
     <div className={styles.container}>
       <Header />
@@ -38,8 +43,8 @@ export const HomeContainer = () => {
         <TabButtonSection
           tabButtonsTitles={[TabButtonSectionTitles.RAITING, TabButtonSectionTitles.RELEASE_DATE]}
           sectionTitle={TabButtonSectionTitles.SORT_BY}
-          tabAction={setSortType}
-          tabType={TabSectionTypes.SORT_BY}
+          activeTab={sortingSectionActiveTab}
+          onClickTabButton={clickTabSorting}
         />
       </div>
       <FilmInfoCardsSection />
