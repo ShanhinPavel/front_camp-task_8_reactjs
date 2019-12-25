@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './film-info-cards-section.module.css';
 import { FilmInfoCard } from './film-info-card';
 import { activeLoading } from '../../../actions';
+import { Error } from '../error';
+import { Spinner } from '../spinner';
 
 const createFilmInfoCards = (filmsList, clickCard) => {
   if (!filmsList.length) return null;
@@ -21,8 +23,8 @@ export const FilmInfoCardsSection = () => {
 
   const filmsInfoCards = createFilmInfoCards(filmsList, clickCard);
 
-  if (isLoading) return <div>Spinner</div>;
-  if (error) return <div>Error</div>;
+  if (isLoading) return <Spinner />;
+  if (error) return <Error />;
 
   return (
     <>

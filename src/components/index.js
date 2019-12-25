@@ -8,4 +8,6 @@ export {
   Poster,
   TabButtonSectionTitles,
   Title,
+  Error,
+  Spinner,
 } from './common';

@@ -4,18 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Logo, Poster, Title } from '../../../components';
+import { Logo, Poster, Title, Error, Spinner } from '../../../components';
 import styles from './header-detail-film-info.module.css';
 import { getReleaseYear } from '../../../utils';
-import { Routes, searchBy, sortBy } from '../../../services';
+import { Routes } from '../../../services';
 import { setDefaultFilmsSearchingSortingParams } from '../../../actions';
 
 export const DetailFilmInfoHeader = () => {
   const dispatch = useDispatch();
   const { filmDetails, error, isLoading } = useSelector((state) => state);
 
-  if (error) return <div>Error</div>;
-  if (isLoading) return <div>Spinner</div>;
+  if (error) return <Error />;
+  if (isLoading) return <Spinner />;
 
   const { poster_path, title, vote_average, runtime = 200, release_date, overview } = filmDetails;
   const releaseYear = getReleaseYear(release_date);
