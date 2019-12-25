@@ -2,7 +2,8 @@ import { receiveFilmDetails } from './film-details.action';
 import { receiveFilms } from './films.action';
 import { activeLoading } from './active-loading.action';
 import { activeError } from './active-error.action';
-import { getFilmById, searchBy, getFilmsByQuery } from '../services/api';
+import { getFilmById, getFilmsByQuery } from '../services/api';
+import { TabButtonValues } from '../components/common/tab-buttons-section';
 
 export const fetchFilmsDetailsAndFilmsByGenres = (filmId) => (dispatch) => {
   dispatch(activeLoading(true));
@@ -13,7 +14,7 @@ export const fetchFilmsDetailsAndFilmsByGenres = (filmId) => (dispatch) => {
 
       dispatch(receiveFilmDetails(response));
 
-      getFilmsByQuery({ search: genres[0], searchBy: searchBy.GENRES }).then((response) => {
+      getFilmsByQuery({ search: genres[0], searchBy: TabButtonValues.GENRES }).then((response) => {
         dispatch(receiveFilms(response));
       });
       dispatch(activeLoading(false));

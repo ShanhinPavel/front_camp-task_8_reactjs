@@ -1,15 +1,5 @@
 import { request } from '../request';
 
-export const searchBy = {
-  GENRES: 'genres',
-  TITLE: 'title',
-};
-
-export const sortBy = {
-  RELEASE_DATE: 'release_date',
-  RATING: 'vote_count',
-};
-
 export const queryParams = {
   SEARCH_BY: 'searchBy',
   SEARCH: 'search',

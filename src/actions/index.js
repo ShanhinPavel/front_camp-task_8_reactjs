@@ -6,3 +6,4 @@ export { setSearchType } from './set-search-type.action';
 export { setSortType } from './set-sort-type.action';
 export { setTextInputValue } from './text-input-action';
 export { fetchFilmsDetailsAndFilmsByGenres } from './filmsAndFilmDetails.action';
+export { setDefaultFilmsSearchingSortingParams } from './set-default-search-sorting-params.action';

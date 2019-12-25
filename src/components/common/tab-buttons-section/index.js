@@ -1,4 +1,1 @@
-export {
-  TabButtonSection,
-  TabButtonSectionTitles
-} from './tab-buttons-section';
+export { TabButtonSection, TabButtonSectionTitles, TabButtonValues } from './tab-buttons-section';

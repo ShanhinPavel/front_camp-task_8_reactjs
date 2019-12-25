@@ -11,34 +11,34 @@ export const TabButtonSectionTitles = {
   SEARCH_BY: 'SEARCH BY',
 
   SORT_BY: 'SORT BY',
-  RELEASE_DATE: 'REALISE_DATE',
+  RELEASE_DATE: 'RELEASE_DATE',
   RAITING: 'RAITING',
 };
 
-const TabButtonValues = {
+export const TabButtonValues = {
   GENRES: 'genres',
   TITLE: 'title',
-  REALISE_DATE: 'release_date',
+  RELEASE_DATE: 'release_date',
   RAITING: 'vote_average',
 };
 
 export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, tabAction }) => {
   const dispatch = useDispatch();
-
-  const createTabButtons = (tabButtonsTitles) =>
-    tabButtonsTitles.map((tabButtonTitle, index) => (
-      <TabButton
-        title={tabButtonTitle}
-        onClickButton={() => dispatch(tabAction(TabButtonValues[tabButtonTitle]))}
-        key={tabButtonTitle}
-        rightRadius={!!index}
-      />
-    ));
+  const [firstButtonTitle, secondButtonTitle] = tabButtonsTitles;
 
   return (
     <div className={styles.container}>
       <p className={styles.sectionTitle}>{sectionTitle}</p>
-      {createTabButtons(tabButtonsTitles)}
+      <TabButton
+        title={firstButtonTitle}
+        onClickButton={() => dispatch(tabAction(TabButtonValues[firstButtonTitle]))}
+        rightRadius={false}
+      />
+      <TabButton
+        title={secondButtonTitle}
+        onClickButton={() => dispatch(tabAction(TabButtonValues[secondButtonTitle]))}
+        rightRadius={true}
+      />
     </div>
   );
 };

@@ -8,8 +8,7 @@ import { Logo, Poster, Title } from '../../../components';
 import styles from './header-detail-film-info.module.css';
 import { getReleaseYear } from '../../../utils';
 import { Routes, searchBy, sortBy } from '../../../services';
-import { clearTextInputValue } from '../../../actions/text-input-action';
-import { setSearchType, setSortType } from '../../../actions';
+import { setDefaultFilmsSearchingSortingParams } from '../../../actions';
 
 export const DetailFilmInfoHeader = () => {
   const dispatch = useDispatch();
@@ -27,11 +26,7 @@ export const DetailFilmInfoHeader = () => {
         <Logo />
         <Link
           to={{ pathname: Routes.home }}
-          onClick={() => {
-            dispatch(clearTextInputValue());
-            dispatch(setSearchType(searchBy.TITLE));
-            dispatch(setSortType(sortBy.RATING));
-          }}
+          onClick={dispatch(setDefaultFilmsSearchingSortingParams)}
         >
           <FontAwesomeIcon icon={faSearch} size="3x" color="#f65261" />
         </Link>
