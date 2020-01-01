@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilmCardsSummary component Should render 1`] = `
+<p
+  className="text"
+>
+  Summary
+</p>
+`;

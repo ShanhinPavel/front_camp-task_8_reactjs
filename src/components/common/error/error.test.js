@@ -1,10 +1,12 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { create } from 'react-test-renderer';
 
 import { Error } from './error';
 
 describe('Render component', () => {
   it('Component should render', () => {
-    shallow(<Error />);
+    const renderedValue = create(<Error />).toJSON();
+    expect(renderedValue).toMatchSnapshot();
   });
 });

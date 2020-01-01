@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 
 import styles from './film-cards-summary.module.css';
-import { generateStingWithAmountFoundMovies, generateStringWithGenreFoundMovies } from './utils';
 
 export const FilmCardsSummaryTypes = {
   SAME_GENRES: 'SAME_GENRES',
