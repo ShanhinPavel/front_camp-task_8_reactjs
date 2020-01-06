@@ -5,5 +5,5 @@ export { fetchFilmsDetails } from './film-details.action';
 export { setSearchType } from './set-search-type.action';
 export { setSortType } from './set-sort-type.action';
 export { setTextInputValue } from './text-input-action';
-export { fetchFilmsDetailsAndFilmsByGenres } from './filmsAndFilmDetails.action';
+export { fetchFilmsDetailsAndFilmsByGenres } from './films-and-film-details.action';
 export { setDefaultFilmsSearchingSortingParams } from './set-default-search-sorting-params.action';
