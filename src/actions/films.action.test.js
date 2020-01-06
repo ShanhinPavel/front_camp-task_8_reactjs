@@ -1,13 +1,22 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { RECEIVE_FILM_DETAILS, receiveFilmDetails, fetchFilmsDetails } from './film-details.action';
+import { RECEIVE_FILMS, fetchFilms, receiveFilms } from './films.action';
 
-describe('receiveFilmDetails action', () => {
-  it('should return object {type: "RECEIVE_FILM_DETAILS", filmDetails: {title: "transformers", genre: "action"}', () => {
-    expect(receiveFilmDetails({ title: 'transformers', genre: 'action' })).toEqual({
-      type: RECEIVE_FILM_DETAILS,
-      filmDetails: { title: 'transformers', genre: 'action' },
+const mockArrayOfFilms = [
+  { title: 'transformers', genre: 'action' },
+  { title: 'transformers5', genre: 'action' },
+];
+
+describe('receiveFilms action', () => {
+  it('should return object {type: "RECEIVE_FILMS", films: [{title: "transformers", genre: "action"}]}', () => {
+    expect(
+      receiveFilms({
+        data: mockArrayOfFilms,
+      }),
+    ).toEqual({
+      type: RECEIVE_FILMS,
+      films: mockArrayOfFilms,
     });
   });
 });
@@ -22,10 +31,10 @@ describe('fetchFilmsDetails action', () => {
 
   describe('getting filmDetails executes with success', () => {
     beforeAll(() => {
-      store.dispatch(fetchFilmsDetails(1));
+      store.dispatch(fetchFilms({}));
     });
     const store = mockStore({});
-    fetch.mockResponseOnce(JSON.stringify({ id: '12345', genres: ['action'] }));
+    fetch.mockResponseOnce(JSON.stringify({ data: mockArrayOfFilms }));
     const actions = store.getActions();
 
     it('should return object {type: "LOADING", isLoading: true} ', () => {
@@ -36,17 +45,17 @@ describe('fetchFilmsDetails action', () => {
       expect(actions[1]).toEqual({ type: 'LOADING', isLoading: false });
     });
 
-    it('should return object with fields type and filmDetails ', () => {
+    it('should return object with fields type and films ', () => {
       expect(actions[2]).toEqual({
-        type: 'RECEIVE_FILM_DETAILS',
-        filmDetails: { id: '12345', genres: ['action'] },
+        type: RECEIVE_FILMS,
+        films: mockArrayOfFilms,
       });
     });
   });
 
-  describe('getting filmDetails executes with fail', () => {
+  describe('getting films executes with fail', () => {
     beforeAll(() => {
-      store.dispatch(fetchFilmsDetails(1));
+      store.dispatch(fetchFilms({}));
     });
     const store = mockStore({});
     fetch.mockReject(new Error('Server did not respond'));

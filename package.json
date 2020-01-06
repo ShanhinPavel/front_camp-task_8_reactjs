@@ -4,7 +4,7 @@
   "description": "Single page application about films",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "webpack --open --config webpack.prod.js",
@@ -44,10 +44,12 @@
     "identity-obj-proxy": "^3.0.0",
     "ignore-styles": "^5.0.1",
     "jest": "^24.9.0",
+    "jest-fetch-mock": "^3.0.1",
     "normalize.css": "^8.0.1",
     "prettier-eslint": "^9.0.1",
     "react-test-renderer": "^16.12.0",
     "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.4",
     "style-loader": "^1.0.0",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.2",
@@ -61,6 +63,7 @@
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "automock": false
   }
 }

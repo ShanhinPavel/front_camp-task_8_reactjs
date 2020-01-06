@@ -18,8 +18,8 @@ export const fetchFilmsDetails = (filmId) => (dispatch) => {
       dispatch(receiveFilmDetails(response));
     },
     (error) => {
-      dispatch(activeError(true));
       dispatch(activeLoading(false));
+      dispatch(activeError(true));
     },
   );
 };
