@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './film-cards-summary.module.css';
+import styles from './film-cards-summary.css';
 
 export const FilmCardsSummaryTypes = {
   SAME_GENRES: 'SAME_GENRES',

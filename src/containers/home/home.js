@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import styles from './home.module.css';
+import styles from './home.css';
 import {
   FilmsCardsSummary,
   FilmInfoCardsSection,

@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Logo, Poster, Title, Error, Spinner } from '../../../components';
-import styles from './header-detail-film-info.module.css';
+import styles from './header-detail-film-info.css';
 import { getReleaseYear } from '../../../utils';
 import { Routes } from '../../../services';
 import { setDefaultFilmsSearchingSortingParams } from '../../../actions';

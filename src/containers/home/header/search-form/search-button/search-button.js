@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './search-button.module.css';
+import styles from './search-button.css';
 
 const SEARCH = 'SEARCH';
 

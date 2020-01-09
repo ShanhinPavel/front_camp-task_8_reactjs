@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { TabButton } from './tab-button';
-import styles from './tab-buttons-section.module.css';
+import styles from './tab-buttons-section.css';
 
 export const TabButtonSectionTitles = {
   GENRES: 'GENRES',

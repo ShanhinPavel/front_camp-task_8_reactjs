@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './search-input.module.css';
+import styles from './search-input.css';
 
 export const SearchInput = ({ inputValue, onChangeInputValue }) => {
   return (

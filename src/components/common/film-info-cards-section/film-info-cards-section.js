@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
-import styles from './film-info-cards-section.module.css';
+import styles from './film-info-cards-section.css';
 import { FilmInfoCard } from './film-info-card';
 import { activeLoading } from '../../../actions';
 import { Error } from '../error';
@@ -31,8 +31,8 @@ export const FilmInfoCardsSection = () => {
       {filmsInfoCards ? (
         <div className={styles.container}>{filmsInfoCards}</div>
       ) : (
-        <p className={styles.noFilmsMessage}>No films found</p>
-      )}
+          <p className={styles.noFilmsMessage}>No films found</p>
+        )}
     </>
   );
 };

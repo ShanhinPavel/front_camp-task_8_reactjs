@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './poster.module.css';
+import styles from './poster.css';
 
 export const Poster = props => {
   const { title, poster_path } = props;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Logo, Title, TabButtonSection, TabButtonSectionTitles } from '../../../components';
 import { SearchForm } from './search-form';
-import styles from './header.module.css';
+import styles from './header.css';
 import { setSearchType } from '../../../actions';
 import { TabSectionTypes } from '../../../components/common/tab-buttons-section/tab-buttons-section';
 

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setTextInputValue, fetchFilms } from '../../../../actions';
 import { SearchInput } from './search-input';
 import { SearchButton } from './search-button';
-import styles from './search-form.module.css';
+import styles from './search-form.css';
 
 export const SearchForm = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './logo.module.css';
+import styles from './logo.css';
 
 const COMPANY = 'netflix';
 const COMPANY_PRODUCT = 'roulette';

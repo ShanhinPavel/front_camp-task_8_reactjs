@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import styles from "./title.module.css";
+import styles from "./title.css";
 
 export const Title = props => {
   const { content } = props;

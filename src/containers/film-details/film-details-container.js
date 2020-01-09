@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../actions';
-import styles from './detail-film-info.module.css';
+import styles from './detail-film-info.css';
 import { Header } from './header-detail-film-info';
 import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common/';
 import { generateStringWithGenreFoundMovies } from '../../components/common/film-cards-summary';
