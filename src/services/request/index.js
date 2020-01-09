@@ -1,2 +1,2 @@
 export { request } from './request';
-export { httpMethods } from './http-methods';
+export { HTTP_METHODS } from './http-methods';

@@ -1,6 +1,6 @@
-import { httpMethods } from './http-methods';
+import { HTTP_METHODS } from './http-methods';
 
-export const request = async (url, method = httpMethods.GET, requestData) => {
+export const request = async (url, method = HTTP_METHODS.GET, requestData) => {
   const requestBody = {
     body: JSON.stringify(requestData),
     headers: {
@@ -9,20 +9,20 @@ export const request = async (url, method = httpMethods.GET, requestData) => {
   };
 
   switch (method) {
-    case httpMethods.PATCH:
-      requestBody.method = httpMethods.PATCH;
+    case HTTP_METHODS.PATCH:
+      requestBody.method = HTTP_METHODS.PATCH;
       break;
-    case httpMethods.PUT:
-      requestBody.method = httpMethods.PUT;
+    case HTTP_METHODS.PUT:
+      requestBody.method = HTTP_METHODS.PUT;
       break;
-    case httpMethods.POST:
-      requestBody.method = httpMethods.POST;
+    case HTTP_METHODS.POST:
+      requestBody.method = HTTP_METHODS.POST;
       break;
-    case httpMethods.UPDATE:
-      requestBody.method = httpMethods.UPDATE;
+    case HTTP_METHODS.UPDATE:
+      requestBody.method = HTTP_METHODS.UPDATE;
       break;
     default:
-      requestBody.method = httpMethods.GET;
+      requestBody.method = HTTP_METHODS.GET;
       break;
   }
 
