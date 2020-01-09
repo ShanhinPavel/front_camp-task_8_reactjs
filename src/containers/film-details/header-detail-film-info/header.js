@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Logo, Poster, Title, Error, Spinner } from '../../../components';
 import styles from './header-detail-film-info.css';
 import { getReleaseYear } from '../../../utils';
-import { Routes } from '../../../services';
+import { Routes } from '../../../routes';
 import { setDefaultFilmsSearchingSortingParams } from '../../../actions';
 
 export const DetailFilmInfoHeader = () => {
