@@ -1,18 +1,18 @@
 import {
-  CLEAR_TEXT_INPUT_VALUE,
-  SET_TEXT_INPUT_VALUE,
-  clearTextInputValue,
-  setTextInputValue,
+  CLEAR_INPUT_VALUE,
+  SET_INPUT_VALUE,
+  clearInputValue,
+  setInputValue,
 } from './text-input-action';
 
 describe('Text input action', () => {
   it('should return object when function clearTextInputValue is called', () => {
-    expect(clearTextInputValue()).toEqual({ type: CLEAR_TEXT_INPUT_VALUE, textInputValue: '' });
+    expect(clearInputValue()).toEqual({ type: CLEAR_INPUT_VALUE, textInputValue: '' });
   });
 
   it('should reuturn object when function setTextInputValue is called', () => {
-    expect(setTextInputValue('transformers')).toEqual({
-      type: SET_TEXT_INPUT_VALUE,
+    expect(setInputValue('transformers')).toEqual({
+      type: SET_INPUT_VALUE,
       textInputValue: 'transformers',
     });
   });

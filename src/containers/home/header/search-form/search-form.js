@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setTextInputValue, fetchFilms } from '../../../../actions';
+
+import { setInputValue, fetchFilms } from '../../../../actions';
 import { SearchInput } from './search-input';
 import { SearchButton } from './search-button';
 import styles from './search-form.css';
@@ -11,7 +11,7 @@ export const SearchForm = () => {
   const { searchBy, sortBy, textInputValue: search } = useSelector((state) => state);
 
   const changeInputValue = (event) => {
-    dispatch(setTextInputValue(event.target.value));
+    dispatch(setInputValue(event.target.value));
   };
 
   const clickSearchButton = () => {

@@ -18,7 +18,7 @@ describe('', () => {
   });
 
   it('should execute actions clearInputField, setSearchType, setSortType ', () => {
-    expect(actions[0]).toEqual({ type: 'CLEAR_TEXT_INPUT_VALUE', textInputValue: '' });
+    expect(actions[0]).toEqual({ type: 'CLEAR_INPUT_VALUE', textInputValue: '' });
     expect(actions[1]).toEqual({ type: 'SET_SEARCH_TYPE', searchType: 'title' });
     expect(actions[2]).toEqual({ type: 'SET_SORT_TYPE', sortType: 'release_date' });
   });

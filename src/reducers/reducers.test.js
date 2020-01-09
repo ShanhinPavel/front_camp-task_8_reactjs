@@ -102,7 +102,7 @@ describe('test all reducers', () => {
     it('should return "vote_average" if action type SET_TEXT_INPUT_VALUE ', () => {
       expect(
         textInput('', {
-          type: 'SET_TEXT_INPUT_VALUE',
+          type: 'SET_INPUT_VALUE',
           textInputValue: 'hello',
         }),
       ).toBe('hello');
