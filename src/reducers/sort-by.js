@@ -1,6 +1,6 @@
-import { TabButtonValues } from '../components/common/tab-buttons-section';
+import { TAB_BUTTON_VALUES } from '../components/common/tab-buttons-section';
 
-const initialSortBy = TabButtonValues.RELEASE_DATE;
+const initialSortBy = TAB_BUTTON_VALUES.RELEASE_DATE;
 
 export const sortBy = function (state = initialSortBy, action) {
   switch (action.type) {

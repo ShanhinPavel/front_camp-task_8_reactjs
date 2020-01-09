@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import styles from './home.css';
 import {
@@ -8,13 +7,13 @@ import {
   FilmInfoCardsSection,
   Footer,
   TabButtonSection,
-  TabButtonSectionTitles,
+  TAB_BUTTON_SECTION_TITLES,
+  TAB_BUTTON_SECTION_TYPES,
 } from '../../components';
 import { Header } from './header';
 import { fetchFilms } from '../../actions';
 import { generateStingWithAmountFoundMovies } from '../../components/common/film-cards-summary';
 import { setSortType } from '../../actions';
-import { TabSectionTypes } from '../../components/common/tab-buttons-section/tab-buttons-section';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -30,7 +29,7 @@ export const Home = () => {
     );
   }, []);
 
-  const sortingSectionActiveTab = useSelector((state) => state[TabSectionTypes.SORT_BY]);
+  const sortingSectionActiveTab = useSelector((state) => state[TAB_BUTTON_SECTION_TYPES.SORT_BY]);
   const clickTabSorting = (buttonValue) => {
     dispatch(setSortType(buttonValue));
   };
@@ -41,8 +40,11 @@ export const Home = () => {
       <div className={styles.filmsCardsSortingSummary}>
         <FilmsCardsSummary filmsSummary={generateStingWithAmountFoundMovies(filmsList)} />
         <TabButtonSection
-          tabButtonsTitles={[TabButtonSectionTitles.RAITING, TabButtonSectionTitles.RELEASE_DATE]}
-          sectionTitle={TabButtonSectionTitles.SORT_BY}
+          tabButtonsTitles={[
+            TAB_BUTTON_SECTION_TITLES.RAITING,
+            TAB_BUTTON_SECTION_TITLES.RELEASE_DATE,
+          ]}
+          sectionTitle={TAB_BUTTON_SECTION_TITLES.SORT_BY}
           activeTab={sortingSectionActiveTab}
           onClickTabButton={clickTabSorting}
         />

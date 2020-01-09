@@ -1,6 +1,6 @@
 import { request } from '../request';
 
-export const queryParams = {
+export const QUERY_PARAMS = {
   SEARCH_BY: 'searchBy',
   SEARCH: 'search',
   SORT_BY: 'sortBy',
@@ -10,7 +10,7 @@ export const queryParams = {
   LIMIT: 'limit',
 };
 
-const sortOrder = {
+const SORT_ORDER = {
   DESCENDING: 'desc',
   ASCENDING: 'asc',
 };
@@ -20,7 +20,7 @@ const FILMS_BY_ID_PATH = 'https://reactjs-cdp.herokuapp.com/movies';
 export const getFilmsByQuery = (searchParams) => {
   const queryString = Object.entries({
     ...searchParams,
-    [queryParams.SORT_ORDER]: sortOrder.DESCENDING,
+    [QUERY_PARAMS.SORT_ORDER]: SORT_ORDER.DESCENDING,
   })
     .map(([key, value]) => `${key}=${value}`)
     .join('&');

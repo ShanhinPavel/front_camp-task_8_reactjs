@@ -1,6 +1,6 @@
-import { TabButtonValues } from '../components/common/tab-buttons-section';
+import { TAB_BUTTON_VALUES } from '../components/common/tab-buttons-section';
 
-const initialSearchBy = TabButtonValues.TITLE;
+const initialSearchBy = TAB_BUTTON_VALUES.TITLE;
 
 export const searchBy = function (state = initialSearchBy, action) {
   switch (action.type) {

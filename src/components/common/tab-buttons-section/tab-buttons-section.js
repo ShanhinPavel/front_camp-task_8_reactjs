@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { TabButton } from './tab-button';
 import styles from './tab-buttons-section.css';
 
-export const TabButtonSectionTitles = {
+export const TAB_BUTTON_SECTION_TITLES = {
   GENRES: 'GENRES',
   TITLE: 'TITLE',
   SEARCH_BY: 'SEARCH BY',
@@ -15,14 +14,14 @@ export const TabButtonSectionTitles = {
   RAITING: 'RAITING',
 };
 
-export const TabButtonValues = {
+export const TAB_BUTTON_VALUES = {
   GENRES: 'genres',
   TITLE: 'title',
   RELEASE_DATE: 'release_date',
   RAITING: 'vote_average',
 };
 
-export const TabSectionTypes = {
+export const TAB_BUTTON_SECTION_TYPES = {
   SORT_BY: 'sortBy',
   SEARCH_BY: 'searchBy',
 };
@@ -34,8 +33,8 @@ export const TabButtonSection = ({
   onClickTabButton,
 }) => {
   const [firstButtonTitle, secondButtonTitle] = tabButtonsTitles;
-  const firstButtonValue = TabButtonValues[firstButtonTitle];
-  const secondButtonValue = TabButtonValues[secondButtonTitle];
+  const firstButtonValue = TAB_BUTTON_VALUES[firstButtonTitle];
+  const secondButtonValue = TAB_BUTTON_VALUES[secondButtonTitle];
 
   return (
     <div className={styles.container}>

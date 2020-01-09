@@ -2,18 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo, Title, TabButtonSection, TabButtonSectionTitles } from '../../../components';
+import {
+  Logo,
+  Title,
+  TabButtonSection,
+  TAB_BUTTON_SECTION_TITLES,
+  TAB_BUTTON_SECTION_TYPES,
+} from '../../../components';
 import { SearchForm } from './search-form';
 import styles from './header.css';
 import { setSearchType } from '../../../actions';
-import { TabSectionTypes } from '../../../components/common/tab-buttons-section/tab-buttons-section';
 
 const FIND_YOUR_MOVIE = 'FIND YOUR MOVIE';
 
 export const Header = () => {
   const dispatch = useDispatch();
 
-  const searchingSectionActiveTab = useSelector((state) => state[TabSectionTypes.SEARCH_BY]);
+  const searchingSectionActiveTab = useSelector(
+    (state) => state[TAB_BUTTON_SECTION_TYPES.SEARCH_BY],
+  );
 
   const clickSearchingSectionTab = (buttonValue) => {
     dispatch(setSearchType(buttonValue));
@@ -28,8 +35,8 @@ export const Header = () => {
         <Title content={FIND_YOUR_MOVIE} />
         <SearchForm />
         <TabButtonSection
-          sectionTitle={TabButtonSectionTitles.SEARCH_BY}
-          tabButtonsTitles={[TabButtonSectionTitles.TITLE, TabButtonSectionTitles.GENRES]}
+          sectionTitle={TAB_BUTTON_SECTION_TITLES.SEARCH_BY}
+          tabButtonsTitles={[TAB_BUTTON_SECTION_TITLES.TITLE, TAB_BUTTON_SECTION_TITLES.GENRES]}
           activeTab={searchingSectionActiveTab}
           onClickTabButton={clickSearchingSectionTab}
         />

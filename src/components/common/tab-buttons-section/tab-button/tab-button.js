@@ -5,7 +5,6 @@ import styles from './tab-button.module.css';
 
 export const TabButton = (props) => {
   const { onClickButton, title, rightRadius, isClicked } = props;
-  console.log(isClicked);
 
   return (
     <button

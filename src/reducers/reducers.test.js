@@ -1,7 +1,7 @@
 import { error } from './error';
 import { filmDetails } from './film-details';
 import { filmsList } from './films-list';
-import { TabButtonValues } from '../components/common/tab-buttons-section';
+import { TAB_BUTTON_VALUES } from '../components/common/tab-buttons-section';
 import { loading } from './loading-data';
 import { searchBy } from './search-by';
 import { sortBy } from './sort-by';
@@ -69,31 +69,31 @@ describe('test all reducers', () => {
   describe('searchByReducer reducer', () => {
     it('should return "genres" if action type SET_SEARCH_TYPE ', () => {
       expect(
-        searchBy(TabButtonValues.TITLE, {
+        searchBy(TAB_BUTTON_VALUES.TITLE, {
           type: 'SET_SEARCH_TYPE',
-          searchType: TabButtonValues.GENRES,
+          searchType: TAB_BUTTON_VALUES.GENRES,
         }),
-      ).toBe(TabButtonValues.GENRES);
+      ).toBe(TAB_BUTTON_VALUES.GENRES);
     });
 
     it('should return initial state if action type is not SET_SEARCH_TYPE ', () => {
-      expect(searchBy(TabButtonValues.TITLE, { type: 'SET_TYPE' })).toBe(TabButtonValues.TITLE);
+      expect(searchBy(TAB_BUTTON_VALUES.TITLE, { type: 'SET_TYPE' })).toBe(TAB_BUTTON_VALUES.TITLE);
     });
   });
 
   describe('sortByReducer reducer', () => {
     it('should return "vote_average" if action type SET_SORT_TYPE ', () => {
       expect(
-        sortBy(TabButtonValues.RELEASE_DATE, {
+        sortBy(TAB_BUTTON_VALUES.RELEASE_DATE, {
           type: 'SET_SORT_TYPE',
-          sortType: TabButtonValues.RAITING,
+          sortType: TAB_BUTTON_VALUES.RAITING,
         }),
-      ).toBe(TabButtonValues.RAITING);
+      ).toBe(TAB_BUTTON_VALUES.RAITING);
     });
 
     it('should return initial state if action type is not SET_SORT_TYPE ', () => {
-      expect(sortBy(TabButtonValues.RELEASE_DATE, { type: 'SET_TYPE' })).toBe(
-        TabButtonValues.RELEASE_DATE,
+      expect(sortBy(TAB_BUTTON_VALUES.RELEASE_DATE, { type: 'SET_TYPE' })).toBe(
+        TAB_BUTTON_VALUES.RELEASE_DATE,
       );
     });
   });
