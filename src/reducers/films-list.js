@@ -1,4 +1,4 @@
-export const filmListReducer = (state = [], action) => {
+export const filmsList = (state = [], action) => {
   switch (action.type) {
     case 'RECEIVE_FILMS':
       return [...action.films];

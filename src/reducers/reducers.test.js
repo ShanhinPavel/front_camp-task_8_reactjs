@@ -1,37 +1,27 @@
-import { errorReducer } from './error-reducer';
-import { filmDetailsReducer } from './film-details-reducer';
-import { filmListReducer } from './film-list-reducer';
+import { error } from './error';
+import { filmDetails } from './film-details';
+import { filmsList } from './films-list';
 import { TabButtonValues } from '../components/common/tab-buttons-section';
-import { loadingReducer } from './loading-data-reducer';
-import { searchByReducer } from './search-by-reducer';
-import { sortByReducer } from './sort-by-reducer';
-import { textInputReducer } from './text-input-reducer';
-
-const initialState = {
-  filmsList: [],
-  filmDetails: {},
-  textInputValue: '',
-  searchBy: TabButtonValues.TITLE,
-  sortBy: TabButtonValues.RELEASE_DATE,
-  error: false,
-  isLoading: true,
-};
+import { loading } from './loading-data';
+import { searchBy } from './search-by';
+import { sortBy } from './sort-by';
+import { textInput } from './text-input';
 
 describe('test all reducers', () => {
   describe('error reducer', () => {
     it('should return true if action type DOWNLOADING_ERROR ', () => {
-      expect(errorReducer(false, { type: 'DOWNLOADING_ERROR', error: true })).toBeTruthy();
+      expect(error(false, { type: 'DOWNLOADING_ERROR', error: true })).toBeTruthy();
     });
 
     it('should return return initial state if action type is not DOWNLOADING_ERROR ', () => {
-      expect(errorReducer(false, { type: 'ERROR', error: true })).toBeFalsy();
+      expect(error(false, { type: 'ERROR', error: true })).toBeFalsy();
     });
   });
 
   describe('filmDetails reducer', () => {
     it('should return object if action type RECEIVE_FILM_DETAILS ', () => {
       expect(
-        filmDetailsReducer(
+        filmDetails(
           {},
           {
             type: 'RECEIVE_FILM_DETAILS',
@@ -42,14 +32,14 @@ describe('test all reducers', () => {
     });
 
     it('should return return initial state if action type is not RECEIVE_FILM_DETAILS ', () => {
-      expect(filmDetailsReducer({}, { type: 'RECEIVE' })).toEqual({});
+      expect(filmDetails({}, { type: 'RECEIVE' })).toEqual({});
     });
   });
 
   describe('film-list reducer', () => {
     it('should return array with films if action type RECEIVE_FILMS ', () => {
       expect(
-        filmListReducer([], {
+        filmsList([], {
           type: 'RECEIVE_FILMS',
           films: [{ id: 12356, genres: ['action'] }],
         }),
@@ -57,14 +47,14 @@ describe('test all reducers', () => {
     });
 
     it('should return return initial state if action type is not RECEIVE_FILMS ', () => {
-      expect(filmListReducer([], { type: 'RECEIVE' })).toEqual([]);
+      expect(filmsList([], { type: 'RECEIVE' })).toEqual([]);
     });
   });
 
   describe('loading reducer', () => {
     it('should return false if action type LOADING ', () => {
       expect(
-        loadingReducer(true, {
+        loading(true, {
           type: 'LOADING',
           isLoading: false,
         }),
@@ -72,14 +62,14 @@ describe('test all reducers', () => {
     });
 
     it('should return  initial state if action type is not LOADING ', () => {
-      expect(loadingReducer(true, { type: 'LOAD' })).toBe(true);
+      expect(loading(true, { type: 'LOAD' })).toBe(true);
     });
   });
 
   describe('searchByReducer reducer', () => {
     it('should return "genres" if action type SET_SEARCH_TYPE ', () => {
       expect(
-        searchByReducer(TabButtonValues.TITLE, {
+        searchBy(TabButtonValues.TITLE, {
           type: 'SET_SEARCH_TYPE',
           searchType: TabButtonValues.GENRES,
         }),
@@ -87,16 +77,14 @@ describe('test all reducers', () => {
     });
 
     it('should return initial state if action type is not SET_SEARCH_TYPE ', () => {
-      expect(searchByReducer(TabButtonValues.TITLE, { type: 'SET_TYPE' })).toBe(
-        TabButtonValues.TITLE,
-      );
+      expect(searchBy(TabButtonValues.TITLE, { type: 'SET_TYPE' })).toBe(TabButtonValues.TITLE);
     });
   });
 
   describe('sortByReducer reducer', () => {
     it('should return "vote_average" if action type SET_SORT_TYPE ', () => {
       expect(
-        sortByReducer(TabButtonValues.RELEASE_DATE, {
+        sortBy(TabButtonValues.RELEASE_DATE, {
           type: 'SET_SORT_TYPE',
           sortType: TabButtonValues.RAITING,
         }),
@@ -104,7 +92,7 @@ describe('test all reducers', () => {
     });
 
     it('should return initial state if action type is not SET_SORT_TYPE ', () => {
-      expect(sortByReducer(TabButtonValues.RELEASE_DATE, { type: 'SET_TYPE' })).toBe(
+      expect(sortBy(TabButtonValues.RELEASE_DATE, { type: 'SET_TYPE' })).toBe(
         TabButtonValues.RELEASE_DATE,
       );
     });
@@ -113,7 +101,7 @@ describe('test all reducers', () => {
   describe('textInputReducer reducer', () => {
     it('should return "vote_average" if action type SET_TEXT_INPUT_VALUE ', () => {
       expect(
-        textInputReducer('', {
+        textInput('', {
           type: 'SET_TEXT_INPUT_VALUE',
           textInputValue: 'hello',
         }),
@@ -121,7 +109,7 @@ describe('test all reducers', () => {
     });
 
     it('should return initial state if action type is not SET_TEXT_INPUT_VALUE ', () => {
-      expect(textInputReducer('', { type: 'SET_TEXT' })).toBe('');
+      expect(textInput('', { type: 'SET_TEXT' })).toBe('');
     });
   });
 });

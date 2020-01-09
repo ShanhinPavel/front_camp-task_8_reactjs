@@ -1,8 +1,8 @@
 import { TabButtonValues } from '../components/common/tab-buttons-section';
 
-const initialSearchByReducer = TabButtonValues.TITLE;
+const initialSearchBy = TabButtonValues.TITLE;
 
-export const searchByReducer = function (state = initialSearchByReducer, action) {
+export const searchBy = function (state = initialSearchBy, action) {
   switch (action.type) {
     case 'SET_SEARCH_TYPE':
       return action.searchType;
