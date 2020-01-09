@@ -1,8 +1,9 @@
 .logo {
   font-size: 18px;
   color: #f65261;
+  text-decoration: none;
 }
 
 .company {
-  font-family: 'Open sans Bold';
+  font-family: "Open sans Bold";
 }
