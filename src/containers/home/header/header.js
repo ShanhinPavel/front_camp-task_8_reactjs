@@ -20,7 +20,7 @@ export const Header = () => {
     (state) => state[TAB_BUTTON_SECTION_TYPES.SEARCH_BY],
   );
 
-  const clickSearchingSectionTab = (buttonValue) => {
+  const handleClickTab = (buttonValue) => {
     dispatch(setSearchType(buttonValue));
   };
 
@@ -36,7 +36,7 @@ export const Header = () => {
           sectionTitle={TAB_BUTTON_SECTION_TITLES.SEARCH_BY}
           tabButtonsTitles={[TAB_BUTTON_SECTION_TITLES.TITLE, TAB_BUTTON_SECTION_TITLES.GENRES]}
           activeTab={searchingSectionActiveTab}
-          onClickTabButton={clickSearchingSectionTab}
+          onClickTab={handleClickTab}
         />
       </div>
     </div>

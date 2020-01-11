@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 import './poster.css';
 
-export const Poster = (props) => {
-  const { title, poster_path } = props;
-
+export const Poster = ({ title, poster_path }) => {
   return <img alt={title} src={poster_path} className="poster" />;
 };
 

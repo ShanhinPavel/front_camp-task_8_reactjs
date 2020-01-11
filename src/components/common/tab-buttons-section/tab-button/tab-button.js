@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 import './tab-button.css';
 
-export const TabButton = (props) => {
-  const { onClickButton, title, rightRadius, isClicked } = props;
-
+export const TabButton = ({ onClick, title, rightRadius, isClicked }) => {
   return (
     <button
       className={rightRadius ? ' tab-button right-button' : 'tab-button left-button'}
-      onClick={onClickButton}
+      onClick={onClick}
       style={{ backgroundColor: isClicked ? '#f65261' : '#232323' }}
     >
       {title}
@@ -19,7 +17,7 @@ export const TabButton = (props) => {
 
 TabButton.propTypes = {
   title: PropTypes.string.isRequired,
-  onClickButton: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   rightRadius: PropTypes.bool,
   isClicked: PropTypes.bool,
 };

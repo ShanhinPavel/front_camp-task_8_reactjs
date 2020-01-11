@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { TabButton } from './tab-button';
-import styles from './tab-buttons-section.css';
+import './tab-buttons-section.css';
 
 export const TAB_BUTTON_SECTION_TITLES = {
   GENRES: 'GENRES',
@@ -26,12 +26,7 @@ export const TAB_BUTTON_SECTION_TYPES = {
   SEARCH_BY: 'searchBy',
 };
 
-export const TabButtonSection = ({
-  sectionTitle,
-  tabButtonsTitles,
-  activeTab,
-  onClickTabButton,
-}) => {
+export const TabButtonSection = ({ sectionTitle, tabButtonsTitles, activeTab, onClickTab }) => {
   const [firstButtonTitle, secondButtonTitle] = tabButtonsTitles;
   const firstButtonValue = TAB_BUTTON_VALUES[firstButtonTitle];
   const secondButtonValue = TAB_BUTTON_VALUES[secondButtonTitle];
@@ -41,13 +36,13 @@ export const TabButtonSection = ({
       <p className="section-title">{sectionTitle}</p>
       <TabButton
         title={firstButtonTitle}
-        onClickButton={() => onClickTabButton(firstButtonValue)}
+        onClick={() => onClickTab(firstButtonValue)}
         rightRadius={false}
         isClicked={firstButtonValue === activeTab}
       />
       <TabButton
         title={secondButtonTitle}
-        onClickButton={() => onClickTabButton(secondButtonValue)}
+        onClick={() => onClickTab(secondButtonValue)}
         rightRadius={true}
         isClicked={secondButtonValue === activeTab}
       />
@@ -58,4 +53,6 @@ export const TabButtonSection = ({
 TabButtonSection.propTypes = {
   sectionTitle: PropTypes.string,
   tabButtonsTitles: PropTypes.arrayOf(PropTypes.string),
+  onClickTab: PropTypes.func,
+  activeTab: PropTypes.string,
 };

@@ -22,15 +22,15 @@ export const Home = () => {
   useEffect(() => {
     dispatch(
       fetchFilms({
-        searchBy: searchBy,
-        sortBy: sortBy,
+        searchBy,
+        sortBy,
         search: textInputValue,
       }),
     );
   }, []);
 
   const sortingSectionActiveTab = useSelector((state) => state[TAB_BUTTON_SECTION_TYPES.SORT_BY]);
-  const clickTabSorting = (buttonValue) => {
+  const handleClickTab = (buttonValue) => {
     dispatch(setSortType(buttonValue));
   };
 
@@ -46,7 +46,7 @@ export const Home = () => {
           ]}
           sectionTitle={TAB_BUTTON_SECTION_TITLES.SORT_BY}
           activeTab={sortingSectionActiveTab}
-          onClickTabButton={clickTabSorting}
+          onClickTab={handleClickTab}
         />
       </div>
       <FilmInfoCardsSection />

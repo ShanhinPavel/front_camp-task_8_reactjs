@@ -8,20 +8,23 @@ import { activeLoading } from '../../../actions';
 import { Error } from '../error';
 import { Spinner } from '../spinner';
 
-const createFilmInfoCards = (filmsList, clickCard) => {
+const createFilmInfoCards = (filmsList, clickCardHandler) => {
   if (!filmsList.length) return null;
 
   return filmsList.map((filmInfo) => (
-    <FilmInfoCard key={filmInfo.id} filmInfo={filmInfo} onClickCard={clickCard} />
+    <FilmInfoCard key={filmInfo.id} filmInfo={filmInfo} onClick={clickCardHandler} />
   ));
 };
 
 export const FilmInfoCardsSection = () => {
   const { filmsList, isLoading, error } = useSelector((state) => state);
   const dispatch = useDispatch();
-  const clickCard = () => dispatch(activeLoading(true));
 
-  const filmsInfoCards = createFilmInfoCards(filmsList, clickCard);
+  const hadleClickCard = () => {
+    dispatch(activeLoading(true));
+  };
+
+  const filmsInfoCards = createFilmInfoCards(filmsList, hadleClickCard);
 
   if (isLoading) return <Spinner />;
   if (error) return <Error />;

@@ -8,20 +8,20 @@ import './search-form.css';
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
-  const { searchBy, sortBy, textInputValue: search } = useSelector((state) => state);
+  const { searchBy, sortBy, textInputValue } = useSelector((state) => state);
 
-  const changeInputValue = (event) => {
+  const handleInputChange = (event) => {
     dispatch(setInputValue(event.target.value));
   };
 
-  const clickSearchButton = () => {
-    dispatch(fetchFilms({ search, sortBy, searchBy }));
+  const handleButtonClick = () => {
+    dispatch(fetchFilms({ search: textInputValue, sortBy, searchBy }));
   };
 
   return (
     <div className="search-form">
-      <SearchInput inputValue={search} onChangeInputValue={changeInputValue} />
-      <SearchButton onClickSearchButton={clickSearchButton} />
+      <SearchInput value={textInputValue} onChange={handleInputChange} />
+      <SearchButton onClick={handleButtonClick} />
     </div>
   );
 };

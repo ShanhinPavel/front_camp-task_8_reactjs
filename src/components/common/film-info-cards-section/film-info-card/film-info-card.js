@@ -7,7 +7,7 @@ import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
 import { generatePathToFilmDetails } from '../../../../routes/';
 
-export const FilmInfoCard = ({ filmInfo, onClickCard }) => {
+export const FilmInfoCard = ({ filmInfo, onClick }) => {
   const { poster_path, title, genres, release_date, id } = filmInfo;
 
   const relatedGenres = concatGenres(genres);
@@ -15,7 +15,7 @@ export const FilmInfoCard = ({ filmInfo, onClickCard }) => {
 
   return (
     <div className="film-info-card">
-      <Link to={generatePathToFilmDetails(id)} onClick={onClickCard}>
+      <Link to={generatePathToFilmDetails(id)} onClick={onClick}>
         <Poster title={title} poster_path={poster_path} />
       </Link>
       <div className="film-info-card-summary">
