@@ -2,9 +2,9 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import { fetchFilmsDetailsAndFilmsByGenres } from './films-and-film-details';
-import { RECEIVE_FILMS } from './films';
-import { RECEIVE_FILM_DETAILS } from './film-details';
-import { LOADING, DOWNLOADING_ERROR } from '../constants';
+import {
+  LOADING, DOWNLOADING_ERROR, RECEIVE_FILMS, RECEIVE_FILM_DETAILS,
+} from '../constants';
 
 const mockArrayOfFilms = [
   { title: 'transformers', genre: 'action' },

@@ -15,7 +15,7 @@ describe('', () => {
   const actions = store.getActions();
 
   beforeAll(() => {
-    store.dispatch(setDefaultFilmsSearchingSortingParams);
+    store.dispatch(setDefaultFilmsSearchingSortingParams());
   });
 
   it('should execute actions clearInputField, setSearchType, setSortType ', () => {
