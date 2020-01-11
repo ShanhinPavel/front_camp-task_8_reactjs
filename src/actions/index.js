@@ -4,6 +4,6 @@ export { fetchFilms } from './films';
 export { fetchFilmsDetails } from './film-details';
 export { setSearchType } from './set-search-type';
 export { setSortType } from './set-sort-type';
-export { setTextInputValue } from './text-input';
+export { setInputValue } from './text-input';
 export { fetchFilmsDetailsAndFilmsByGenres } from './films-and-film-details';
 export { setDefaultFilmsSearchingSortingParams } from './set-default-search-sorting-params';

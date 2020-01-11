@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import { fetchFilmsDetailsAndFilmsByGenres } from './films-and-film-details';
 import { RECEIVE_FILMS } from './films';
 import { RECEIVE_FILM_DETAILS } from './film-details';
-import { LOADING } from '../constants';
+import { LOADING, DOWNLOADING_ERROR } from '../constants';
 
 const mockArrayOfFilms = [
   { title: 'transformers', genre: 'action' },
@@ -64,9 +64,9 @@ describe('fetchFilmsDetails action', () => {
     const actions = store.getActions();
 
     it('should return object with error field', () => {
-      expect(actions[0]).toEqual({ type: 'LOADING', isLoading: true });
-      expect(actions[1]).toEqual({ error: true, type: 'DOWNLOADING_ERROR' });
-      expect(actions[2]).toEqual({ type: 'LOADING', isLoading: false });
+      expect(actions[0]).toEqual({ type: LOADING, isLoading: true });
+      expect(actions[1]).toEqual({ error: true, type: DOWNLOADING_ERROR });
+      expect(actions[2]).toEqual({ type: LOADING, isLoading: false });
     });
   });
 });

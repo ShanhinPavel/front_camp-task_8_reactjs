@@ -54,8 +54,8 @@ describe('fetchFilmsDetails action', () => {
     const actions = store.getActions();
 
     it('should return object with error field', () => {
-      expect(actions[0]).toEqual({ type: 'LOADING', isLoading: true });
-      expect(actions[1]).toEqual({ type: 'LOADING', isLoading: false });
+      expect(actions[0]).toEqual({ type: LOADING, isLoading: true });
+      expect(actions[1]).toEqual({ type: LOADING, isLoading: false });
       expect(actions[2]).toEqual({ error: true, type: DOWNLOADING_ERROR });
     });
   });
