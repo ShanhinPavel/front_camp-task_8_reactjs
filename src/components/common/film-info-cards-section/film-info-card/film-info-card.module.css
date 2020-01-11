@@ -1,4 +1,4 @@
-.cardContainer {
+.film-info-card {
   display: flex;
   flex-direction: column;
   width: 325px;
@@ -6,42 +6,36 @@
   padding: 20px 0;
 }
 
-.filmImg {
-  max-width: 100%;
-  object-fit: cover;
-  height: 90%;
-}
-
-.filmInfoContainer {
+.film-info-card-summary {
   display: flex;
   flex-direction: column;
   color: #ffffff;
   margin-top: 20px;
 }
 
-.titleAndRealizeDataContainer {
+.title-relise {
   display: flex;
   justify-content: space-between;
 }
 
-.filmTitle,
-.realizeData {
+.film-title,
+.film-relise {
   margin: 0;
 }
 
-.filmTitle {
+.film-title {
   font-size: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.realizeData {
+.film-relise {
   padding: 5px;
   border: 1px solid #ffffff;
   border-radius: 5px;
 }
 
-.filmGenre {
+.film-genre {
   margin: 0;
   font-size: 14px;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './film-info-card.module.css';
+import './film-info-card.module.css';
 import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
@@ -14,16 +14,16 @@ export const FilmInfoCard = ({ filmInfo, onClickCard }) => {
   const releaseYear = getReleaseYear(release_date);
 
   return (
-    <div className={styles.cardContainer}>
+    <div className="film-info-card">
       <Link to={generatePathToFilmDetails(id)} onClick={onClickCard}>
         <Poster title={title} poster_path={poster_path} />
       </Link>
-      <div className={styles.filmInfoContainer}>
-        <div className={styles.titleAndRealizeDataContainer}>
-          <p className={styles.filmTitle}>{title}</p>
-          <p className={styles.realizeData}>{releaseYear}</p>
+      <div className="film-info-card-summary">
+        <div className="title-relise">
+          <p className="film-title">{title}</p>
+          <p className="film-relise">{releaseYear}</p>
         </div>
-        <p className={styles.filmGenre}>{relatedGenres}</p>
+        <p className="film-genre">{relatedGenres}</p>
       </div>
     </div>
   );

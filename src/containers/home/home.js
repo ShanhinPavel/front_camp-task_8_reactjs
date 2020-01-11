@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import styles from './home.css';
+import './home.css';
 import {
   FilmsCardsSummary,
   FilmInfoCardsSection,
@@ -35,9 +35,9 @@ export const Home = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="home-container">
       <Header />
-      <div className={styles.filmsCardsSortingSummary}>
+      <div className="films-sorting-summary">
         <FilmsCardsSummary filmsSummary={generateStingWithAmountFoundMovies(filmsList)} />
         <TabButtonSection
           tabButtonsTitles={[

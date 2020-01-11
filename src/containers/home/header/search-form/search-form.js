@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setInputValue, fetchFilms } from '../../../../actions';
 import { SearchInput } from './search-input';
 import { SearchButton } from './search-button';
-import styles from './search-form.css';
+import './search-form.css';
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ export const SearchForm = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="search-form">
       <SearchInput inputValue={search} onChangeInputValue={changeInputValue} />
       <SearchButton onClickSearchButton={clickSearchButton} />
     </div>

@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './search-button.css';
-
-const SEARCH = 'SEARCH';
+import './search-button.css';
 
 export const SearchButton = ({ onClickSearchButton }) => (
-  <button className={styles.button} onClick={onClickSearchButton}>
-    {SEARCH}
+  <button className="search-button" onClick={onClickSearchButton}>
+    SEARCH
   </button>
 );
 

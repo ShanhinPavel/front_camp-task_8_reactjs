@@ -1,4 +1,4 @@
-.main {
+.tab-button {
   background-color: #232323;
   opacity: 0.85;
   border: 0;
@@ -7,13 +7,11 @@
   padding: 10px;
 }
 
-.left {
-  composes: main;
+.left-button {
   border-radius: 5px 0 0 5px;
 }
 
-.right {
-  composes: main;
+.right-button {
   border-radius: 0 5px 5px 0;
 }
 

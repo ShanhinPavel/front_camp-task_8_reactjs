@@ -5,13 +5,13 @@ const HtmlWebpackRootPlugin = require('html-webpack-root-plugin');
 
 module.exports = {
   entry: {
-    main: ['@babel/polyfill', './src/index.js']
+    main: ['@babel/polyfill', './src/index.js'],
   },
 
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/'
+    publicPath: '/',
   },
 
   module: {
@@ -20,8 +20,8 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/i,
@@ -29,30 +29,25 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: '[name]__[local]'
-              }
-            }
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(woff|woff2)$/,
         use: {
-          loader: 'url-loader'
-        }
-      }
-    ]
+          loader: 'url-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Film app',
       meta: {
-        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-      }
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      },
     }),
     new HtmlWebpackRootPlugin(),
-    new CleanWebpackPlugin()
-  ]
+    new CleanWebpackPlugin(),
+  ],
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
-import styles from './film-info-cards-section.css';
+import './film-info-cards-section.css';
 import { FilmInfoCard } from './film-info-card';
 import { activeLoading } from '../../../actions';
 import { Error } from '../error';
@@ -29,10 +29,10 @@ export const FilmInfoCardsSection = () => {
   return (
     <>
       {filmsInfoCards ? (
-        <div className={styles.container}>{filmsInfoCards}</div>
+        <div className="films-cards-section">{filmsInfoCards}</div>
       ) : (
-          <p className={styles.noFilmsMessage}>No films found</p>
-        )}
+        <p className="no-films-message">No films found</p>
+      )}
     </>
   );
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Logo } from '../logo';
-import styles from './footer.css';
+import './footer.css';
 
 export const Footer = () => {
   return (
-    <div className={styles.container}>
+    <div className="footer">
       <Logo />
     </div>
   );

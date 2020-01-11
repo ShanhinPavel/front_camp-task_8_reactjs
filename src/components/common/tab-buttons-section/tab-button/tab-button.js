@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './tab-button.module.css';
+import './tab-button.css';
 
 export const TabButton = (props) => {
   const { onClickButton, title, rightRadius, isClicked } = props;
 
   return (
     <button
-      className={rightRadius ? styles.right : styles.left}
+      className={rightRadius ? ' tab-button right-button' : 'tab-button left-button'}
       onClick={onClickButton}
       style={{ backgroundColor: isClicked ? '#f65261' : '#232323' }}
     >

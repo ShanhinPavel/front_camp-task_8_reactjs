@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './film-cards-summary.css';
+import './film-cards-summary.css';
 
 export const FilmCardsSummaryTypes = {
   SAME_GENRES: 'SAME_GENRES',
@@ -9,7 +9,7 @@ export const FilmCardsSummaryTypes = {
 };
 
 export const FilmsCardsSummary = ({ filmsSummary }) => (
-  <p className={styles.text}>{filmsSummary}</p>
+  <p className={'films_summary'}>{filmsSummary}</p>
 );
 
 FilmsCardsSummary.propTypes = {

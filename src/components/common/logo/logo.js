@@ -2,16 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Routes } from '../../../routes';
 
-import styles from './logo.css';
-
-const COMPANY = 'netflix';
-const COMPANY_PRODUCT = 'roulette';
+import './logo.css';
 
 export const Logo = () => (
   <p>
-    <NavLink to={Routes.home} className={styles.logo}>
-      <span className={styles.company}>{COMPANY}</span>
-      {COMPANY_PRODUCT}
+    <NavLink to={Routes.home} className="logo">
+      <span className="logo-company">netflix</span>
+      roulette
     </NavLink>
   </p>
 );

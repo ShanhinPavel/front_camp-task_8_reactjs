@@ -1,13 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from "./title.css";
-
-export const Title = props => {
+export const Title = (props) => {
   const { content } = props;
-  return <h1 className={styles.title}>{content}</h1>;
+  return <h1 style={{ color: '#ffffff' }}>{content}</h1>;
 };
 
 Title.propTypes = {
-  content: PropTypes.string.isRequired
+  content: PropTypes.string.isRequired,
 };

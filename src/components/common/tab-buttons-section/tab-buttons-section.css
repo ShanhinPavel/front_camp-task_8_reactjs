@@ -1,11 +1,11 @@
-.container {
+.tab-buttons-section {
   display: flex;
   color: #ffffff;
   min-width: 30%;
   align-items: center;
 }
 
-.sectionTitle {
+.section-title {
   font-size: 14px;
   margin: 0 20px 0 0;
 }

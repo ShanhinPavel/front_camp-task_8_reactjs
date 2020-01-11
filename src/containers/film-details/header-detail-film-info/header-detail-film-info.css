@@ -1,4 +1,4 @@
-.container {
+.film-details-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,34 +10,27 @@
   object-fit: cover;
 }
 
-.companyName {
-  color: #f65261;
-}
-
-.logoAndSearchButtonContainer {
+.logo-search-button {
   display: flex;
   justify-content: space-between;
   width: 90%;
 }
 
-.searchIcon {
-}
-
-.filmInfoContainer {
+.film-details-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
 }
 
-.generalInfo {
+.general-info {
   display: flex;
   flex-direction: column;
   color: #ffffff;
   width: 60%;
 }
 
-.titleAndRaiting {
+.title-rating {
   display: flex;
 }
 
@@ -54,7 +47,7 @@
   color: #a1e66f;
 }
 
-.durationAndReleaseYear {
+.duration-release-date {
   display: flex;
   color: #f65261;
   font-size: 28px;

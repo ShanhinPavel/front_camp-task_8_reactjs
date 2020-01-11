@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Logo, Poster, Title, Error, Spinner } from '../../../components';
-import styles from './header-detail-film-info.css';
+import './header-detail-film-info.css';
 import { getReleaseYear } from '../../../utils';
 import { Routes } from '../../../routes';
 import { setDefaultFilmsSearchingSortingParams } from '../../../actions';
@@ -21,8 +21,8 @@ export const DetailFilmInfoHeader = () => {
   const releaseYear = getReleaseYear(release_date);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logoAndSearchButtonContainer}>
+    <div className="film-details-header">
+      <div className="logo-search-button">
         <Logo />
         <Link
           to={{ pathname: Routes.home }}
@@ -31,18 +31,18 @@ export const DetailFilmInfoHeader = () => {
           <FontAwesomeIcon icon={faSearch} size="3x" color="#f65261" />
         </Link>
       </div>
-      <div className={styles.filmInfoContainer}>
+      <div className="film-details-info">
         <Poster poster_path={poster_path} title={title} />
-        <div className={styles.generalInfo}>
-          <div className={styles.titleAndRaiting}>
+        <div className="general-info">
+          <div className="title-rating">
             <Title content={title} />
-            <p className={styles.raiting}>{vote_average}</p>
+            <p className="raiting">{vote_average}</p>
           </div>
-          <div className={styles.durationAndReleaseYear}>
-            <p className={styles.releaseYear}>{releaseYear}</p>
-            <p className={styles.duration}>{runtime} min</p>
+          <div className="duration-release-date">
+            <p className="release-date">{releaseYear}</p>
+            <p className="duration">{runtime} min</p>
           </div>
-          <p className={styles.description}>{overview}</p>
+          <p className="description">{overview}</p>
         </div>
       </div>
     </div>

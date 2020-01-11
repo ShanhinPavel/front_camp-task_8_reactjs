@@ -1,4 +1,4 @@
-.container {
+.home-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,11 +8,7 @@
   background-color: #424242;
 }
 
-.companyName {
-  color: #f65261;
-}
-
-.filmsCardsSortingSummary {
+.films-sorting-summary {
   display: flex;
   min-height: 60px;
   width: 90%;

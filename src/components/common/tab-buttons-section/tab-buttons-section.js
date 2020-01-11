@@ -37,8 +37,8 @@ export const TabButtonSection = ({
   const secondButtonValue = TAB_BUTTON_VALUES[secondButtonTitle];
 
   return (
-    <div className={styles.container}>
-      <p className={styles.sectionTitle}>{sectionTitle}</p>
+    <div className="tab-buttons-section">
+      <p className="section-title">{sectionTitle}</p>
       <TabButton
         title={firstButtonTitle}
         onClickButton={() => onClickTabButton(firstButtonValue)}

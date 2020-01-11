@@ -1,9 +1,4 @@
-.common {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
+.home-header-container {
   min-height: 300px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('https://total.kz/storage/6d/6d5799b94a5bf9ee228bad00f9481ee3.jpg');
@@ -11,15 +6,16 @@
   object-fit: cover;
 }
 
-.searchContainer {
-  composes: common;
+.search-container {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
   width: 80%;
   min-height: 200px;
 }
 
-.logoContainer {
+.logo-container {
   margin-left: 40px;
   width: 50%;
 }

@@ -10,10 +10,8 @@ import {
   TAB_BUTTON_SECTION_TYPES,
 } from '../../../components';
 import { SearchForm } from './search-form';
-import styles from './header.css';
+import './header.css';
 import { setSearchType } from '../../../actions';
-
-const FIND_YOUR_MOVIE = 'FIND YOUR MOVIE';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -27,12 +25,12 @@ export const Header = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logoContainer}>
+    <div className="home-header-container">
+      <div className="logo-container">
         <Logo />
       </div>
-      <div className={styles.searchContainer}>
-        <Title content={FIND_YOUR_MOVIE} />
+      <div className="search-container">
+        <Title content="FIND YOUR MOVIE" />
         <SearchForm />
         <TabButtonSection
           sectionTitle={TAB_BUTTON_SECTION_TITLES.SEARCH_BY}
