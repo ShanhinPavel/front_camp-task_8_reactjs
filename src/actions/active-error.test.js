@@ -1,4 +1,5 @@
-import { activeError, DOWNLOADING_ERROR } from './active-error.action';
+import { activeError } from './active-error';
+import { DOWNLOADING_ERROR } from '../constants';
 
 describe('Active-error action', () => {
   it('should return object with fields "type", "error" with values ', () => {

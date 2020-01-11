@@ -1,4 +1,5 @@
-import { activeLoading, LOADING } from './active-loading.action';
+import { activeLoading } from './active-loading';
+import { LOADING } from '../constants';
 
 describe('', () => {
   it('should return object {type: "LOADING", isLoading: "true"}', () => {});

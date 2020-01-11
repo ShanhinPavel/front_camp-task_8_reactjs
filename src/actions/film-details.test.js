@@ -1,7 +1,8 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { RECEIVE_FILM_DETAILS, receiveFilmDetails, fetchFilmsDetails } from './film-details.action';
+import { receiveFilmDetails, fetchFilmsDetails } from './film-details';
+import { RECEIVE_FILM_DETAILS, DOWNLOADING_ERROR, LOADING } from '../constants';
 
 describe('receiveFilmDetails action', () => {
   it('should return object {type: "RECEIVE_FILM_DETAILS", filmDetails: {title: "transformers", genre: "action"}', () => {
@@ -29,16 +30,16 @@ describe('fetchFilmsDetails action', () => {
     const actions = store.getActions();
 
     it('should return object {type: "LOADING", isLoading: true} ', () => {
-      expect(actions[0]).toEqual({ type: 'LOADING', isLoading: true });
+      expect(actions[0]).toEqual({ type: LOADING, isLoading: true });
     });
 
     it('should return object { type: "LOADING", isLoading: false }', () => {
-      expect(actions[1]).toEqual({ type: 'LOADING', isLoading: false });
+      expect(actions[1]).toEqual({ type: LOADING, isLoading: false });
     });
 
     it('should return object with fields type and filmDetails ', () => {
       expect(actions[2]).toEqual({
-        type: 'RECEIVE_FILM_DETAILS',
+        type: RECEIVE_FILM_DETAILS,
         filmDetails: { id: '12345', genres: ['action'] },
       });
     });
@@ -55,7 +56,7 @@ describe('fetchFilmsDetails action', () => {
     it('should return object with error field', () => {
       expect(actions[0]).toEqual({ type: 'LOADING', isLoading: true });
       expect(actions[1]).toEqual({ type: 'LOADING', isLoading: false });
-      expect(actions[2]).toEqual({ error: true, type: 'DOWNLOADING_ERROR' });
+      expect(actions[2]).toEqual({ error: true, type: DOWNLOADING_ERROR });
     });
   });
 });
