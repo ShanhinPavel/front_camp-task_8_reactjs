@@ -1,8 +1,7 @@
-import { activeError } from './active-error.action';
-import { activeLoading } from './active-loading.action';
+import { activeError } from './active-error';
+import { activeLoading } from './active-loading';
 import { getFilmById } from '../services/api';
-
-export const RECEIVE_FILM_DETAILS = 'RECEIVE_FILM_DETAILS';
+import { RECEIVE_FILM_DETAILS } from '../constants';
 
 export const receiveFilmDetails = (filmDetails) => ({
   type: RECEIVE_FILM_DETAILS,

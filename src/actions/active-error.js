@@ -1,4 +1,4 @@
-export const DOWNLOADING_ERROR = 'DOWNLOADING_ERROR';
+import { DOWNLOADING_ERROR } from '../constants';
 
 export const activeError = (error) => ({
   type: DOWNLOADING_ERROR,

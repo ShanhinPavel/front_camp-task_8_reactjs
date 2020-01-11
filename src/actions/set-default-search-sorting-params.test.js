@@ -1,6 +1,7 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { setDefaultFilmsSearchingSortingParams } from './set-default-search-sorting-params.action';
+import { setDefaultFilmsSearchingSortingParams } from './set-default-search-sorting-params';
+import { CLEAR_TEXT_INPUT_VALUE, SET_SEARCH_TYPE, SET_SORT_TYPE } from '../constants';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -18,8 +19,8 @@ describe('', () => {
   });
 
   it('should execute actions clearInputField, setSearchType, setSortType ', () => {
-    expect(actions[0]).toEqual({ type: 'CLEAR_TEXT_INPUT_VALUE', textInputValue: '' });
-    expect(actions[1]).toEqual({ type: 'SET_SEARCH_TYPE', searchType: 'title' });
-    expect(actions[2]).toEqual({ type: 'SET_SORT_TYPE', sortType: 'release_date' });
+    expect(actions[0]).toEqual({ type: CLEAR_TEXT_INPUT_VALUE, textInputValue: '' });
+    expect(actions[1]).toEqual({ type: SET_SEARCH_TYPE, searchType: 'title' });
+    expect(actions[2]).toEqual({ type: SET_SORT_TYPE, sortType: 'release_date' });
   });
 });

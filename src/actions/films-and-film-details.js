@@ -1,7 +1,7 @@
-import { receiveFilmDetails } from './film-details.action';
-import { receiveFilms } from './films.action';
-import { activeLoading } from './active-loading.action';
-import { activeError } from './active-error.action';
+import { receiveFilmDetails } from './film-details';
+import { receiveFilms } from './films';
+import { activeLoading } from './active-loading';
+import { activeError } from './active-error';
 import { getFilmById, getFilmsByQuery } from '../services/api';
 import { TabButtonValues } from '../components/common/tab-buttons-section';
 

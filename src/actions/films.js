@@ -1,8 +1,7 @@
 import { getFilmsByQuery } from '../services/api/get-films-by-search-query';
-import { activeLoading } from './active-loading.action';
-import { activeError } from './active-error.action';
-
-export const RECEIVE_FILMS = 'RECEIVE_FILMS';
+import { activeLoading } from './active-loading';
+import { activeError } from './active-error';
+import { RECEIVE_FILMS } from '../constants';
 
 export function receiveFilms(json) {
   return {

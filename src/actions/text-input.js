@@ -1,5 +1,4 @@
-export const CLEAR_TEXT_INPUT_VALUE = 'CLEAR_TEXT_INPUT_VALUE';
-export const SET_TEXT_INPUT_VALUE = 'SET_TEXT_INPUT_VALUE';
+import { CLEAR_TEXT_INPUT_VALUE, SET_TEXT_INPUT_VALUE } from '../constants';
 
 export const clearTextInputValue = () => ({
   type: CLEAR_TEXT_INPUT_VALUE,
