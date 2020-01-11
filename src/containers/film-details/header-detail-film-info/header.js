@@ -20,10 +20,14 @@ export const DetailFilmInfoHeader = () => {
   const { poster_path, title, vote_average, runtime = 200, release_date, overview } = filmDetails;
   const releaseYear = getReleaseYear(release_date);
 
+  const hadleClickLogo = () => {
+    dispatch(setDefaultFilmsSearchingSortingParams());
+  };
+
   return (
     <div className="film-details-header">
       <div className="logo-search-button">
-        <Logo />
+        <Logo onClick={hadleClickLogo} />
         <Link
           to={{ pathname: Routes.home }}
           onClick={dispatch(setDefaultFilmsSearchingSortingParams)}

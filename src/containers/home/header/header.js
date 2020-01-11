@@ -11,7 +11,7 @@ import {
 } from '../../../components';
 import { SearchForm } from './search-form';
 import './header.css';
-import { setSearchType } from '../../../actions';
+import { setSearchType, setDefaultFilmsSearchingSortingParams } from '../../../actions';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -24,10 +24,14 @@ export const Header = () => {
     dispatch(setSearchType(buttonValue));
   };
 
+  const handleClickLogo = () => {
+    dispatch(setDefaultFilmsSearchingSortingParams());
+  };
+
   return (
     <div className="home-header-container">
       <div className="logo-container">
-        <Logo />
+        <Logo onClick={handleClickLogo} />
       </div>
       <div className="search-container">
         <Title content="FIND YOUR MOVIE" />
