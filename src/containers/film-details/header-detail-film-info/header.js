@@ -24,13 +24,17 @@ export const DetailFilmInfoHeader = () => {
     dispatch(setDefaultFilmsSearchingSortingParams());
   };
 
+  const  handleClickSearchIcon = () => {
+    dispatch(setDefaultFilmsSearchingSortingParams());
+  }
+
   return (
     <div className="film-details-header">
       <div className="logo-search-button">
         <Logo onClick={hadleClickLogo} />
         <Link
           to={{ pathname: Routes.home }}
-          onClick={dispatch(setDefaultFilmsSearchingSortingParams)}
+          onClick={handleClickSearchIcon}
         >
           <FontAwesomeIcon icon={faSearch} size="3x" color="#f65261" />
         </Link>
