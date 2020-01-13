@@ -6,11 +6,12 @@
   width: 100%;
   margin: 0 auto;
   background-color: #424242;
+  min-height: calc(100vh - 50px);
 }
 
 .films-sorting-summary {
   display: flex;
-  min-height: 60px;
+  height: 60px;
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;

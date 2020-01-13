@@ -11,7 +11,7 @@ const override = css`
 export const Spinner = () => {
   const { isLoading } = useState((state) => state);
   return (
-    <div style={{ margin: '0 auto' }}>
+    <div style={{ margin: '50vh auto' }}>
       <BarLoader css={override} size={25} color={'#ffffff'} loading={isLoading} />
     </div>
   );

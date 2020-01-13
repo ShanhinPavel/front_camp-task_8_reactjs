@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: #232323;
-  min-height: 500px;
+  /* min-height: 500px; */
 }
 
 .no-films-message {

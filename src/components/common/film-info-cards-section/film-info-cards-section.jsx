@@ -7,7 +7,6 @@ import { FilmInfoCard } from './film-info-card';
 import { activeLoading } from '../../../actions';
 import { Error } from '../error';
 import { Spinner } from '../spinner';
-import { FilmEntities } from '../../../services';
 
 const createFilmInfoCards = (filmsList, clickCardHandler) => {
   if (!filmsList.length) return null;
@@ -18,7 +17,7 @@ const createFilmInfoCards = (filmsList, clickCardHandler) => {
 };
 
 export const FilmInfoCardsSection = () => {
-  const { filmsList, isLoading, error } = useSelector((state) => state);
+  const { filmsList } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const hadleClickCard = () => {
@@ -26,9 +25,6 @@ export const FilmInfoCardsSection = () => {
   };
 
   const filmsInfoCards = createFilmInfoCards(filmsList, hadleClickCard);
-
-  if (isLoading) return <Spinner />;
-  if (error) return <Error />;
 
   return (
     <>

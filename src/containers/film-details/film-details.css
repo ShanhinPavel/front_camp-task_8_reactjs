@@ -6,6 +6,7 @@
   width: 100%;
   margin: 0 auto;
   background-color: #424242;
+  min-height: calc(100vh - 50px);
 }
 
 .films-genre-summary {

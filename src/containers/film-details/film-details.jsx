@@ -19,13 +19,15 @@ export const FilmDetails = () => {
   }, [filmId]);
 
   return (
-    <div className="film-details-container">
-      <FilmDetailsHeader />
-      <div className="films-genre-summary">
-        <FilmsCardsSummary filmsSummary={generateMoviesGenre(filmDetails)} />
+    <>
+      <div className="film-details-container">
+        <FilmDetailsHeader />
+        <div className="films-genre-summary">
+          <FilmsCardsSummary filmsSummary={generateMoviesGenre(filmDetails)} />
+        </div>
+        <FilmInfoCardsSection />
       </div>
-      <FilmInfoCardsSection />
       <Footer />
-    </div>
+    </>
   );
 };

@@ -9,6 +9,8 @@ import {
   TabButtonSection,
   TAB_BUTTON_SECTION_TITLES,
   TAB_BUTTON_SECTION_TYPES,
+  Spinner,
+  Error,
 } from '../../components';
 import { HomeHeader } from './home-header';
 import { fetchFilms } from '../../actions';
@@ -17,7 +19,9 @@ import { setSortType } from '../../actions';
 
 export const Home = () => {
   const dispatch = useDispatch();
-  const { textInputValue, searchBy, sortBy, filmsList } = useSelector((state) => state);
+  const { textInputValue, searchBy, sortBy, filmsList, isLoading, error } = useSelector(
+    (state) => state,
+  );
 
   useEffect(() => {
     dispatch(
@@ -34,23 +38,28 @@ export const Home = () => {
     dispatch(setSortType(buttonValue));
   };
 
+  if (isLoading) return <Spinner />;
+  if (error) return <Error />;
+
   return (
-    <div className="home-container">
-      <HomeHeader />
-      <div className="films-sorting-summary">
-        <FilmsCardsSummary filmsSummary={generateMoviesAmount(filmsList)} />
-        <TabButtonSection
-          tabButtonsTitles={[
-            TAB_BUTTON_SECTION_TITLES.RAITING,
-            TAB_BUTTON_SECTION_TITLES.RELEASE_DATE,
-          ]}
-          sectionTitle={TAB_BUTTON_SECTION_TITLES.SORT_BY}
-          activeTab={sortingSectionActiveTab}
-          onClickTab={handleClickTab}
-        />
+    <>
+      <div className="home-container">
+        <HomeHeader />
+        <div className="films-sorting-summary">
+          <FilmsCardsSummary filmsSummary={generateMoviesAmount(filmsList)} />
+          <TabButtonSection
+            tabButtonsTitles={[
+              TAB_BUTTON_SECTION_TITLES.RAITING,
+              TAB_BUTTON_SECTION_TITLES.RELEASE_DATE,
+            ]}
+            sectionTitle={TAB_BUTTON_SECTION_TITLES.SORT_BY}
+            activeTab={sortingSectionActiveTab}
+            onClickTab={handleClickTab}
+          />
+        </div>
+        <FilmInfoCardsSection />
       </div>
-      <FilmInfoCardsSection />
       <Footer />
-    </div>
+    </>
   );
 };
