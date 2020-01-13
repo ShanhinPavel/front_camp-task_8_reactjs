@@ -5,16 +5,18 @@ import './film-details.css';
 import { FilmDetailsHeader } from './film-details-header';
 import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common';
 import { generateMoviesGenre } from '../../components/common/film-cards-summary';
+import { useParams } from 'react-router-dom';
 
-export const FilmDetails = (props) => {
+export const FilmDetails = () => {
   const dispatch = useDispatch();
   const { filmDetails } = useSelector((state) => state);
+  const { filmId } = useParams();
+
   dispatch(activeLoading);
 
   useEffect(() => {
-    const { filmId } = props.match.params;
     dispatch(fetchFilmsDetailsAndFilmsByGenres(filmId));
-  }, [props.match.params]);
+  }, [filmId]);
 
   return (
     <div className="film-details-container">

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { FilmEntities } from '../../../../services';
 import './film-info-card.css';
 import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
@@ -30,16 +31,6 @@ export const FilmInfoCard = ({ filmInfo, onClick }) => {
 };
 
 FilmInfoCard.propTypes = {
-  id: PropTypes.number,
-  title: PropTypes.string,
-  tagline: PropTypes.string,
-  vote_average: PropTypes.number,
-  vote_count: PropTypes.number,
-  release_date: PropTypes.string,
-  poster_path: PropTypes.string,
-  overview: PropTypes.string,
-  budget: PropTypes.number,
-  revenue: PropTypes.number,
-  runtime: PropTypes.number,
-  genres: PropTypes.arrayOf(PropTypes.string),
+  filmInfo: FilmEntities.Film,
+  onClick: PropTypes.func,
 };

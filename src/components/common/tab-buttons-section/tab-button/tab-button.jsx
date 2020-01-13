@@ -18,6 +18,6 @@ export const TabButton = ({ onClick, title, rightRadius, isClicked }) => {
 TabButton.propTypes = {
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  rightRadius: PropTypes.bool,
-  isClicked: PropTypes.bool,
+  rightRadius: PropTypes.bool.isRequired,
+  isClicked: PropTypes.bool.isRequired,
 };

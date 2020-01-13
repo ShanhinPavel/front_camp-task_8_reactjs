@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 import { request } from '../request';
+import { Film } from './get-film-by-id';
 
 export const QUERY_PARAMS = {
   SEARCH_BY: 'searchBy',
@@ -27,3 +30,5 @@ export const getFilmsByQuery = (searchParams) => {
   const url = `${FILMS_BY_ID_PATH}?${queryString}`;
   return request(url);
 };
+
+export const Films = PropTypes.arrayOf(Film);
