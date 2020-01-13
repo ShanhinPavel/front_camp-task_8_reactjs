@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './film-info-card.module.css';
+import './film-info-card.css';
 import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
-import { generatePathToFilmDetails } from '../../../../routes';
+import { generateFilmDetailsPath } from '../../../../routes';
 
 export const FilmInfoCard = ({ filmInfo, onClick }) => {
   const { poster_path, title, genres, release_date, id } = filmInfo;
@@ -15,7 +15,7 @@ export const FilmInfoCard = ({ filmInfo, onClick }) => {
 
   return (
     <div className="film-info-card">
-      <Link to={generatePathToFilmDetails(id)} onClick={onClick}>
+      <Link to={generateFilmDetailsPath(id)} onClick={onClick}>
         <Poster title={title} poster_path={poster_path} />
       </Link>
       <div className="film-info-card-summary">

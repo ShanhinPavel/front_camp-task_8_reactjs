@@ -1,2 +1,2 @@
 export { Home } from './home';
-export { FilmDetailsContainer } from './film-details';
+export { FilmDetails } from './film-details';

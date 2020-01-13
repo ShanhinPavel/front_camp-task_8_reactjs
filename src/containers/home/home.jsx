@@ -10,9 +10,9 @@ import {
   TAB_BUTTON_SECTION_TITLES,
   TAB_BUTTON_SECTION_TYPES,
 } from '../../components';
-import { Header } from './header';
+import { HomeHeader } from './home-header';
 import { fetchFilms } from '../../actions';
-import { generateStingWithAmountFoundMovies } from '../../components/common/film-cards-summary';
+import { generateMoviesAmount } from '../../components/common/film-cards-summary';
 import { setSortType } from '../../actions';
 
 export const Home = () => {
@@ -36,9 +36,9 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <Header />
+      <HomeHeader />
       <div className="films-sorting-summary">
-        <FilmsCardsSummary filmsSummary={generateStingWithAmountFoundMovies(filmsList)} />
+        <FilmsCardsSummary filmsSummary={generateMoviesAmount(filmsList)} />
         <TabButtonSection
           tabButtonsTitles={[
             TAB_BUTTON_SECTION_TITLES.RAITING,

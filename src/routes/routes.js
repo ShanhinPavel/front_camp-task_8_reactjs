@@ -4,4 +4,4 @@ export const Routes = {
   error: '/error',
 };
 
-export const generatePathToFilmDetails = (filmId) => `/film/${filmId}`;
+export const generateFilmDetailsPath = (filmId) => `/film/${filmId}`;

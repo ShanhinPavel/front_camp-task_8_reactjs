@@ -10,10 +10,10 @@ import {
   TAB_BUTTON_SECTION_TYPES,
 } from '../../../components';
 import { SearchForm } from './search-form';
-import './header.css';
+import './home-header.css';
 import { setSearchType, setDefaultFilmsSearchingSortingParams } from '../../../actions';
 
-export const Header = () => {
+export const HomeHeader = () => {
   const dispatch = useDispatch();
 
   const searchingSectionActiveTab = useSelector(
@@ -47,7 +47,7 @@ export const Header = () => {
   );
 };
 
-Header.propTypes = {
+HomeHeader.propTypes = {
   onClickTabButton: PropTypes.func,
   onClickSubmitButton: PropTypes.func,
   changeInputTextFieldValue: PropTypes.func,

@@ -1,4 +1,4 @@
 export {
-  generateStingWithAmountFoundMovies,
-  generateStringWithGenreFoundMovies,
-} from './generate-string-with-movies-summary';
+  generateMoviesAmount,
+  generateMoviesGenre,
+} from './generate-movies-summary';

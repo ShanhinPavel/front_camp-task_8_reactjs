@@ -1,1 +1,1 @@
-export { FilmDetailsContainer } from './film-details-container';
+export { FilmDetails } from './film-details';

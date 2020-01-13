@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../actions';
-import './detail-film-info.css';
-import { Header } from './header-detail-film-info';
+import './film-details.css';
+import { FilmDetailsHeader } from './film-details-header';
 import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common';
-import { generateStringWithGenreFoundMovies } from '../../components/common/film-cards-summary';
+import { generateMoviesGenre } from '../../components/common/film-cards-summary';
 
-export const FilmDetailsContainer = (props) => {
+export const FilmDetails = (props) => {
   const dispatch = useDispatch();
   const { filmDetails } = useSelector((state) => state);
   dispatch(activeLoading);
@@ -18,9 +18,9 @@ export const FilmDetailsContainer = (props) => {
 
   return (
     <div className="film-details-container">
-      <Header />
+      <FilmDetailsHeader />
       <div className="films-genre-summary">
-        <FilmsCardsSummary filmsSummary={generateStringWithGenreFoundMovies(filmDetails)} />
+        <FilmsCardsSummary filmsSummary={generateMoviesGenre(filmDetails)} />
       </div>
       <FilmInfoCardsSection />
       <Footer />
