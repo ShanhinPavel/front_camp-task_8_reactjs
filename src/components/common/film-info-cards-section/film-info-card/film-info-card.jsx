@@ -5,7 +5,7 @@ import './film-info-card.module.css';
 import { concatGenres, getReleaseYear } from '../../../../utils';
 import { Poster } from '../../poster';
 import { Link } from 'react-router-dom';
-import { generatePathToFilmDetails } from '../../../../routes/';
+import { generatePathToFilmDetails } from '../../../../routes';
 
 export const FilmInfoCard = ({ filmInfo, onClick }) => {
   const { poster_path, title, genres, release_date, id } = filmInfo;

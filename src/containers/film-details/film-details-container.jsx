@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../actions';
 import './detail-film-info.css';
 import { Header } from './header-detail-film-info';
-import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common/';
+import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common';
 import { generateStringWithGenreFoundMovies } from '../../components/common/film-cards-summary';
 
 export const FilmDetailsContainer = (props) => {

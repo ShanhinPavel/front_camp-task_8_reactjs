@@ -17,8 +17,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
+        resolve: {
+          extensions: [".js", ".jsx"]
+        },
         use: {
           loader: 'babel-loader',
         },
@@ -40,6 +43,7 @@ module.exports = {
       },
     ],
   },
+ 
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Film app',
