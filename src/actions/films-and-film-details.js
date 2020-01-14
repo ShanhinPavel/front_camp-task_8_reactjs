@@ -16,7 +16,9 @@ export const fetchFilmsDetailsAndFilmsByGenres = (filmId) => (dispatch) => {
 
       getFilmsByQuery({ search: genres[0], searchBy: TAB_BUTTON_VALUES.GENRES }).then(
         (response) => {
-          dispatch(receiveFilms(response));
+          const filteredFilms = response.data.filter((film) => film.id !== +filmId);
+
+          dispatch(receiveFilms({ ...response, data: filteredFilms }));
         },
       );
       dispatch(activeLoading(false));

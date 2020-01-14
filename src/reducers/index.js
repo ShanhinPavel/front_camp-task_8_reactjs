@@ -5,7 +5,7 @@ import { searchBy } from './search-by';
 import { sortBy } from './sort-by';
 import { textInput } from './text-input';
 import { error } from './error';
-import { loading } from './loading-data';
+import { loading } from './loading';
 
 export const reducers = combineReducers({
   filmsList,

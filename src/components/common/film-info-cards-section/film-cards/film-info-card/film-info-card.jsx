@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { FilmEntities } from '../../../../services';
+import { FilmEntities } from '../../../../../services';
 import './film-info-card.css';
-import { concatGenres, getReleaseYear } from '../../../../utils';
-import { Poster } from '../../poster';
+import { concatGenres, getReleaseYear } from '../../../../../utils';
+import { Poster } from '../../../poster';
 import { Link } from 'react-router-dom';
-import { generateFilmDetailsPath } from '../../../../routes';
+import { generateFilmDetailsPath } from '../../../../../routes';
 
 export const FilmInfoCard = ({ filmInfo, onClick }) => {
   const { poster_path, title, genres, release_date, id } = filmInfo;

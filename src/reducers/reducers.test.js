@@ -2,7 +2,7 @@ import { error } from './error';
 import { filmDetails } from './film-details';
 import { filmsList } from './films-list';
 import { TAB_BUTTON_VALUES } from '../components/common/tab-buttons-section';
-import { loading } from './loading-data';
+import { loading } from './loading';
 import { searchBy } from './search-by';
 import { sortBy } from './sort-by';
 import { textInput } from './text-input';

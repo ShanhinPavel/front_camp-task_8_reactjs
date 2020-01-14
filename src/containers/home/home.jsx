@@ -13,7 +13,7 @@ import {
   Error,
 } from '../../components';
 import { HomeHeader } from './home-header';
-import { fetchFilms } from '../../actions';
+import { fetchFilms, activeLoading } from '../../actions';
 import { generateMoviesAmount } from '../../components/common/film-cards-summary';
 import { setSortType } from '../../actions';
 
@@ -38,6 +38,10 @@ export const Home = () => {
     dispatch(setSortType(buttonValue));
   };
 
+  const handleClickCard = () => {
+    dispatch(activeLoading(true));
+  };
+
   if (isLoading) return <Spinner />;
   if (error) return <Error />;
 
@@ -57,7 +61,7 @@ export const Home = () => {
             onClickTab={handleClickTab}
           />
         </div>
-        <FilmInfoCardsSection />
+        <FilmInfoCardsSection handleClickCard={handleClickCard} filmsList={filmsList} />
       </div>
       <Footer />
     </>
