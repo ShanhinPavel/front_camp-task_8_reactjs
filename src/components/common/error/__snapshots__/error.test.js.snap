@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render component Component should render 1`] = `
-<div>
+<div
+  style={
+    Object {
+      "color": "white",
+      "margin": "50vh auto",
+      "textAlign": "center",
+    }
+  }
+>
   <h1>
-    Oops!.Something went wrong. Please reload the page.
+    Oops! Something went wrong.
   </h1>
+  <p>
+    Please reload the page.
+  </p>
 </div>
 `;
