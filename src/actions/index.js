@@ -1,7 +1,7 @@
 export { activeLoading } from './active-loading';
 export { activeError } from './active-error';
 export { fetchFilms } from './films';
-export { fetchFilmsDetails } from './film-details';
+export * from './film-details';
 export { setSearchType } from './set-search-type';
 export { setSortType } from './set-sort-type';
 export { setInputValue } from './text-input';

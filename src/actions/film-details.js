@@ -22,3 +22,8 @@ export const fetchFilmsDetails = (filmId) => (dispatch) => {
     },
   );
 };
+
+export const receiveFilmDetailsPreviousFetching = (filmId, films) => (dispatch) => {
+  const filmDetails = films.find((film) => film.id === +filmId);
+  dispatch(receiveFilmDetails(filmDetails));
+};

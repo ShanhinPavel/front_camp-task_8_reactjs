@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchFilmsDetailsAndFilmsByGenres, activeLoading } from '../../actions';
+import {
+  fetchFilmsDetailsAndFilmsByGenres,
+  receiveFilmDetailsPreviousFetching,
+} from '../../actions';
 import { FilmDetailsHeader } from './film-details-header';
 import { FilmsCardsSummary, Footer, FilmInfoCardsSection } from '../../components/common';
 import { generateMoviesGenre } from '../../components/common/film-cards-summary';
@@ -12,15 +15,20 @@ export const FilmDetails = () => {
   const dispatch = useDispatch();
   const { filmDetails, filmsList } = useSelector((state) => state);
   const { filmId } = useParams();
+  const [filmsDownloaded, setFilmsDownloaded] = useState(false);
+  console.log(filmsDownloaded);
+  console.log(filmsList);
 
   useEffect(() => {
-    dispatch(activeLoading(true));
-    dispatch(fetchFilmsDetailsAndFilmsByGenres(filmId));
+    if (!filmsDownloaded) {
+      dispatch(fetchFilmsDetailsAndFilmsByGenres(filmId));
+      setFilmsDownloaded(true);
+    } else {
+      dispatch(receiveFilmDetailsPreviousFetching(filmId, filmsList));
+    }
   }, [filmId]);
 
-  const handleClickCard = () => {
-    dispatch(activeLoading(true));
-  };
+  const filteredFilmsList = filmsList.filter((film) => film.id !== +filmId);
 
   return (
     <>
@@ -29,7 +37,7 @@ export const FilmDetails = () => {
         <div className="films-genre-summary">
           <FilmsCardsSummary filmsSummary={generateMoviesGenre(filmDetails)} />
         </div>
-        <FilmInfoCardsSection filmsList={filmsList} handleClickCard={handleClickCard} />
+        <FilmInfoCardsSection filmsList={filteredFilmsList} />
       </div>
       <Footer />
     </>

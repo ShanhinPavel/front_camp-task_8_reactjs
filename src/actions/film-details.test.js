@@ -1,8 +1,14 @@
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import { receiveFilmDetails, fetchFilmsDetails } from './film-details';
+import {
+  receiveFilmDetails,
+  fetchFilmsDetails,
+  receiveFilmDetailsPreviousFetching,
+} from './film-details';
 import { RECEIVE_FILM_DETAILS, DOWNLOADING_ERROR, LOADING } from '../constants';
+
+const middlewares = [thunk];
 
 describe('receiveFilmDetails action', () => {
   it('should return object {type: "RECEIVE_FILM_DETAILS", filmDetails: {title: "transformers", genre: "action"}', () => {
@@ -13,7 +19,32 @@ describe('receiveFilmDetails action', () => {
   });
 });
 
-const middlewares = [thunk];
+describe('receiveFilmDetailsPreviousFetching', () => {
+  const filmsList = [
+    { id: 1, name: 'first' },
+    { id: 2, name: 'second' },
+  ];
+
+  const mockStore = configureStore(middlewares);
+  const store = mockStore({});
+
+  beforeAll(() => {
+    store.dispatch(receiveFilmDetailsPreviousFetching(2, filmsList));
+  });
+
+  it('should return object { filmDetails: { id: 2, name: second}, type: RECEIVE_FILM_DETAILS}', () => {
+    const actions = store.getActions();
+
+    expect(actions[0]).toEqual({
+      filmDetails: {
+        id: 2,
+        name: 'second',
+      },
+      type: 'RECEIVE_FILM_DETAILS',
+    });
+  });
+});
+
 const mockStore = configureStore(middlewares);
 
 describe('fetchFilmsDetails action', () => {
