@@ -78,10 +78,13 @@
       [
         "@reportportal/reportportal-agent-jest",
         {
-          "token": "00000000-0000-0000-0000-000000000000",
-          "endpoint": "https://your.reportportal.server/api/v1",
-          "project": "YourReportPortalProjectName",
-          "launch": "YourLauncherName"
+          "endpoint": "https://rp.epam.com/api/v1",
+          "project": "pavel_shanhin_personal",
+          "launch": "front_camp_task_7_reactjs",
+          "tags": [
+            "tag1",
+            "tag2"
+          ]
         }
       ]
     ]
